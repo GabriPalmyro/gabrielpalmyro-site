@@ -46,7 +46,7 @@ await s('Page.enable');
 await s('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: scheme }, { name: 'prefers-reduced-motion', value: 'reduce' }] });
 
 const shots = [
-  ['/', 'en'], ['/pt/', 'pt'], ['/projects/treino-facil', 'en-project'], ['/pt/projects/toaquirs', 'pt-project'],
+  ['/', 'en'], ['/pt', 'pt'], ['/projects/treino-facil', 'en-project'], ['/pt/projects/toaquirs', 'pt-project'],
 ];
 const sizes = [['desktop', 1440, 900, false], ['mobile', 390, 844, true]];
 await rm(join(out, 'slices'), { recursive: true, force: true });

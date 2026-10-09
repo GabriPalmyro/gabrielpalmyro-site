@@ -49,7 +49,7 @@ const write = (path, html, { sitemap = true, alternates } = {}) => {
 const ctx = { cfg, assets };
 
 for (const lang of ['en', 'pt']) {
-  write(lang === 'en' ? '/' : '/pt/', homePage({ ...ctx, lang }), { alternates: { en: '/', pt: '/pt/' } });
+  write(lang === 'en' ? '/' : '/pt', homePage({ ...ctx, lang }), { alternates: { en: '/', pt: '/pt' } });
   for (const project of PROJECTS) {
     const slug = `projects/${project.slug}`;
     write(lang === 'en' ? `/${slug}` : `/pt/${slug}`, projectPage({ ...ctx, lang, project }), { alternates: { en: `/${slug}`, pt: `/pt/${slug}` } });

@@ -6,7 +6,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/pt-br", "destination": "/pt/", "permanent": true },
+    { "source": "/pt-br", "destination": "/pt", "permanent": true },
     { "source": "/pt-br/:path*", "destination": "/pt/:path*", "permanent": true },
     { "source": "/resume.pdf", "destination": "https://linkedin.com/in/gabriel-palmyro/", "permanent": false }
   ],

@@ -10,7 +10,7 @@ export const ic = (name, size, extra = '') =>
 export const other = (lang) => (lang === 'en' ? 'pt' : 'en');
 
 // Home path for a language, with an optional hash.
-export const home = (lang, hash = '') => (lang === 'en' ? '/' : '/pt/') + hash;
+export const home = (lang, hash = '') => (lang === 'en' ? '/' : '/pt') + hash;
 
 // Path of a page in a language. Pages live at the same slug under /pt/.
 export const localPath = (lang, slug) => (lang === 'en' ? `/${slug}` : `/pt/${slug}`);

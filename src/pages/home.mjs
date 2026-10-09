@@ -189,7 +189,7 @@ function jsonLd(cfg, lang) {
 
 export function homePage({ cfg, assets, lang }) {
   const t = STRINGS[lang];
-  const paths = { en: '/', pt: '/pt/' };
+  const paths = { en: '/', pt: '/pt' };
   return `${head({ cfg, assets, lang, title: t.meta.title, desc: t.meta.desc, paths, extraHead: jsonLd(cfg, lang) })}
 ${bodyOpen({ lang, page: 'home', paths })}
 ${nav({ lang, paths, onHome: true })}
