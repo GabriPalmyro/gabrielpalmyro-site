@@ -1,0 +1,42 @@
+# gabrielpalmyro.com
+
+Personal and company site for Gabriel Palmyro (EN + PT-BR). Plain HTML/CSS/vanilla JS rendered by a zero-dependency Node script, same architecture and design language as the Forgetless landing (`forgetless-landing`).
+
+## Pages
+
+| Path | What |
+| --- | --- |
+| `/`, `/pt/` | Home: hero, apps, projects, experience, skills, recommendations, company, contact |
+| `/projects/{slug}`, `/pt/projects/{slug}` | Project pages (same URLs as the previous site) |
+| `/404` | Not found (bilingual) |
+
+Also: `sitemap.xml` (hreflang), `robots.txt`, OG images (`/og/og-en.png`, `/og/og-pt.png`), favicons ("GP" monogram), JSON-LD (Person + Organization with CNPJ).
+
+## Develop
+
+```bash
+node scripts/build.mjs          # renders dist/ (fails if an em or en dash reaches a page)
+node scripts/serve.mjs 8789     # preview dist/ with clean URLs, like Vercel
+node scripts/render-images.mjs  # re-render OG images + PNG favicons (needs local Chrome, outputs committed)
+node scripts/review-shots.mjs   # full-page screenshots 1440 and 390 wide into .review/ (add `dark` for dark mode)
+```
+
+No dependencies, Node 18+ (`review-shots.mjs` needs Node 22+ for the built-in WebSocket).
+
+- `src/content/apps.mjs`: the app cards (one array, add an object to add an app). Metrics only with a source comment.
+- `src/content/projects.mjs`, `experience.mjs`, `profile.mjs` (skills, recommendations): content lists, EN + PT.
+- `src/i18n.mjs`: interface and section copy. `src/layout.mjs`: head, nav, footer. `src/pages/*.mjs`: templates.
+- `site.config.mjs`: site URL, contact email, links and the company block (legal name, CNPJ, city; never the street address).
+- `static/`: copied as-is. CSS is bundled with a content hash in this order: `tokens.css` (design tokens adapted from Forgetless `fl.css`, cobalt accent) then `site.css` (layout) then `fx.css` (motion).
+- Motion: one-shot reveals via IntersectionObserver (`data-reveal`), short hero entrance, no animation library, no springs. Everything is gated on `prefers-reduced-motion: no-preference` and the page is complete without JS. Dark mode follows the OS in CSS.
+
+Copy rules: no em or en dashes in either language, no invented numbers, recommendations are real quotes kept verbatim.
+
+## Deploy (Vercel)
+
+`vercel.json` sets `buildCommand: node scripts/build.mjs`, `outputDirectory: dist`, `cleanUrls`, security and cache headers, and redirects (`/resume.pdf` goes to LinkedIn, `/pt-br` to `/pt/`).
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `SITE_URL` | `https://www.gabrielpalmyro.com` | Canonical origin (canonical, hreflang, sitemap, OG) |
+| `CONTACT_EMAIL` | `apps@gabrielpalmyro.com` | Contact address |
