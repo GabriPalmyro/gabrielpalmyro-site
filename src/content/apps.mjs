@@ -7,6 +7,8 @@
 export const APPS = [
   {
     id: 'forgetless',
+    os: ['iOS', 'Android'], // JSON-LD operatingSystem
+    category: 'LifestyleApplication', // JSON-LD applicationCategory
     name: 'Forgetless',
     url: 'https://getforgetless.com',
     host: 'getforgetless.com',
@@ -15,12 +17,14 @@ export const APPS = [
     role: null,
     platforms: { en: 'iOS and Android, coming soon', pt: 'iOS e Android, em breve' },
     desc: {
-      en: 'Turns the TikToks, Reels, videos and links you save into workouts, recipes, places on a map and reminders, and answers questions from your saves.',
-      pt: 'Transforma os TikToks, Reels, vídeos e links que você salva em treinos, receitas, lugares no mapa e lembretes. E responde perguntas sobre seus salvos.',
+      en: 'Turns the TikToks, Reels, videos and links you save into workouts, recipes, places on a map and reminders. You can also ask it questions about what you saved.',
+      pt: 'Transforma os TikToks, Reels, vídeos e links que você salva em treinos, receitas, lugares no mapa e lembretes. Você também pode fazer perguntas sobre o que salvou.',
     },
   },
   {
     id: 'heat-game',
+    os: ['iOS', 'Android'], // JSON-LD operatingSystem
+    category: 'GameApplication', // JSON-LD applicationCategory
     name: 'Heat Game',
     url: 'https://heatgame.com.br',
     host: 'heatgame.com.br',
@@ -29,12 +33,14 @@ export const APPS = [
     role: { en: 'Co-founder', pt: 'Cofundador' },
     platforms: { en: 'iOS and Android', pt: 'iOS e Android' },
     desc: {
-      en: 'A game app for couples. I co-founded it and work across the whole product: the Flutter app, the NestJS backend, infra, analytics and ASO.',
-      pt: 'Um app de jogo pra casais. Sou cofundador e trabalho no produto inteiro: o app em Flutter, o backend em NestJS, infra, analytics e ASO.',
+      en: 'A game app for couples. I co-founded it and work on all of it: the Flutter app, the NestJS backend, infra, analytics and ASO.',
+      pt: 'Um app de jogo pra casais. Sou cofundador e trabalho em tudo: o app em Flutter, o backend em NestJS, infra, analytics e ASO.',
     },
   },
   {
     id: 'sequencia',
+    os: ['iOS', 'Android'], // JSON-LD operatingSystem
+    category: 'GameApplication', // JSON-LD applicationCategory
     name: 'Sequência',
     url: 'https://sequenciaparty.com',
     host: 'sequenciaparty.com',
@@ -55,6 +61,8 @@ export const APPS = [
   },
   {
     id: 'dustpan',
+    os: ['macOS'], // JSON-LD operatingSystem
+    category: 'DeveloperApplication', // JSON-LD applicationCategory
     name: 'Dustpan',
     url: 'https://github.com/GabriPalmyro/dustpan',
     host: 'github.com/GabriPalmyro/dustpan',
@@ -63,8 +71,8 @@ export const APPS = [
     role: null,
     platforms: { en: 'macOS, open source (MIT)', pt: 'macOS, open source (MIT)' },
     desc: {
-      en: 'A native macOS menu bar app that watches disk, memory, CPU and GPU, and explains what is safe to clean on developer Macs: Xcode, simulators, Gradle, node_modules. SwiftUI, no dependencies.',
-      pt: 'Um app nativo de barra de menus do macOS que acompanha disco, memória, CPU e GPU, e explica o que dá pra limpar com segurança num Mac de dev: Xcode, simuladores, Gradle, node_modules. SwiftUI, sem dependências.',
+      en: 'A native macOS menu bar app that watches disk, memory, CPU and GPU and shows what is safe to delete on a developer Mac (Xcode, simulators, Gradle, node_modules). Written in SwiftUI with no dependencies.',
+      pt: 'Um app nativo de barra de menus do macOS que acompanha disco, memória, CPU e GPU e mostra o que dá pra apagar com segurança num Mac de dev (Xcode, simuladores, Gradle, node_modules). Feito em SwiftUI, sem dependências.',
     },
   },
 ];

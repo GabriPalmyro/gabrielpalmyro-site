@@ -51,7 +51,7 @@ export const EXPERIENCE = [
     end: null, // end date not on the old site
     points: {
       en: [
-        'Architected and built a neighborhood-focused e-commerce app from scratch in 2 months with Flutter, Bloc, Injectable and Dio interceptors.',
+        'Designed and built a neighborhood e-commerce app from scratch in 2 months with Flutter, Bloc, Injectable and Dio interceptors.',
         'Integrated Stripe payments, handling the logic for credit cards and other payment types.',
         'Automated CI/CD with Codemagic for Google Play and the App Store, reducing manual deployment work by 70%.',
       ],
@@ -95,12 +95,12 @@ export const EXPERIENCE = [
     end: { en: 'Nov 2023', pt: 'nov. 2023' },
     points: {
       en: [
-        'Developed and scaled a health tech app from MVP to 50,000+ active users.',
+        'Took a health tech app from MVP to 50,000+ active users.',
         'Clean Architecture, unit and integration tests, GetX for state and routing.',
         'CI/CD with Codemagic for production and staging.',
       ],
       pt: [
-        'Desenvolvi e escalei um app de health tech do MVP a mais de 50 mil usuários ativos.',
+        'Levei um app de health tech do MVP a mais de 50 mil usuários ativos.',
         'Clean Architecture, testes unitários e de integração, GetX pra estado e rotas.',
         'CI/CD com Codemagic pra produção e staging.',
       ],

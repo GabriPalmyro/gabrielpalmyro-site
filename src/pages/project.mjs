@@ -12,7 +12,17 @@ export function projectPage({ cfg, assets, lang, project: p }) {
   const linkLabel = { code: pr.code, play: pr.play, site: pr.site };
   const links = p.links.map((l, i) =>
     `<a class="btn ${i === 0 ? 'primary' : 'secondary'}" href="${l.url}" rel="noopener">${linkLabel[l.kind]}${ic('external', 16)}</a>`).join('');
-  return `${head({ cfg, assets, lang, title: `${p.name} · Gabriel Palmyro`, desc: p.short[lang], paths })}
+  const crumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Gabriel Palmyro', item: cfg.siteUrl + home(lang) },
+      { '@type': 'ListItem', position: 2, name: t.nav.projects, item: cfg.siteUrl + home(lang, '#projects') },
+      { '@type': 'ListItem', position: 3, name: p.name, item: cfg.siteUrl + paths[lang] },
+    ],
+  };
+  const extraHead = `<script type="application/ld+json">${JSON.stringify(crumbs)}</script>`;
+  return `${head({ cfg, assets, lang, title: `${p.name} · Gabriel Palmyro`, desc: p.short[lang], paths, extraHead })}
 ${bodyOpen({ lang, page: 'project', paths })}
 ${nav({ lang, paths })}
 <main id="main" class="pj">

@@ -12,8 +12,8 @@ export const PROJECTS = [
     kind: { en: 'Social impact', pt: 'Impacto social' },
     private: true,
     short: {
-      en: 'Platform to help locate rescued animals in shelters after the floods in Rio Grande do Sul. Created as a social impact project to reunite pets with their owners during a natural disaster.',
-      pt: 'Plataforma pra ajudar a localizar animais resgatados em abrigos depois das enchentes no Rio Grande do Sul. Um projeto de impacto social pra reunir pets e tutores durante um desastre natural.',
+      en: 'A platform for finding rescued animals in shelters after the May 2024 floods in Rio Grande do Sul, so owners could get their pets back.',
+      pt: 'Uma plataforma pra encontrar animais resgatados em abrigos depois das enchentes de maio de 2024 no Rio Grande do Sul, pra que os tutores recuperassem seus pets.',
     },
     about: {
       en: [
@@ -56,8 +56,8 @@ export const PROJECTS = [
     tags: ['Flutter', 'Firebase', 'Provider', 'Codemagic'],
     kind: { en: 'Personal project', pt: 'Projeto pessoal' },
     short: {
-      en: 'Personal project fitness app that allows users to organize, create, and share workout routines. Features include 150+ exercises with images and videos, ready-to-use workout plans, and personalized exercise tracking.',
-      pt: 'App de treino, projeto pessoal, pra organizar, criar e compartilhar rotinas de treino. Tem mais de 150 exercícios com imagens e vídeos, treinos prontos e acompanhamento personalizado dos exercícios.',
+      en: 'A fitness app for organizing, creating and sharing workout routines. It has 150+ exercises with images and videos, ready-made workouts and tracking for each exercise.',
+      pt: 'Um app de treino pra organizar, criar e compartilhar rotinas. Tem mais de 150 exercícios com imagens e vídeos, treinos prontos e acompanhamento de cada exercício.',
     },
     about: {
       en: [
@@ -103,8 +103,8 @@ export const PROJECTS = [
     tags: ['React', 'TypeScript', 'NestJS', 'MySQL', 'AWS EC2', 'Vercel'],
     kind: { en: 'Team project', pt: 'Projeto em equipe' },
     short: {
-      en: 'Interactive platform for creating and playing gamified storylines. Built with React (TypeScript) frontend and NestJS backend, using MySQL. Deployed backend on Amazon EC2 and frontend on Vercel.',
-      pt: 'Plataforma interativa pra criar e jogar histórias gamificadas. Frontend em React (TypeScript) e backend em NestJS, com MySQL. Backend no Amazon EC2 e frontend na Vercel.',
+      en: 'A platform for writing and playing branching stories. React and TypeScript on the frontend, NestJS and MySQL on the backend, deployed on Vercel and Amazon EC2.',
+      pt: 'Uma plataforma pra escrever e jogar histórias com vários caminhos. Frontend em React e TypeScript, backend em NestJS com MySQL, publicados na Vercel e no Amazon EC2.',
     },
     about: {
       en: [
@@ -118,14 +118,14 @@ export const PROJECTS = [
     },
     features: {
       en: [
-        'Led the project vision and development strategy',
+        'Set the direction of the project and how we would build it',
         'Architected the application and chose the stack',
         'Built the React frontend with TypeScript',
         'Built the NestJS API and the MySQL schema for branching stories',
         'Set up deployment on AWS EC2 (backend) and Vercel (frontend)',
       ],
       pt: [
-        'Liderei a visão do projeto e a estratégia de desenvolvimento',
+        'Defini a direção do projeto e como a gente ia construir',
         'Desenhei a arquitetura e escolhi a stack',
         'Construí o frontend em React com TypeScript',
         'Construí a API em NestJS e o schema MySQL das histórias ramificadas',
@@ -145,8 +145,8 @@ export const PROJECTS = [
     kind: { en: 'Health tech', pt: 'Health tech' },
     private: true,
     short: {
-      en: 'Healthcare app built with Flutter that helps users find medications, schedule deliveries, and manage prescriptions. Integrated payment systems and real-time features.',
-      pt: 'App de saúde feito em Flutter que ajuda a encontrar medicamentos, agendar entregas e gerenciar receitas. Com pagamentos integrados e recursos em tempo real.',
+      en: 'A Flutter health app for finding medication, scheduling deliveries and managing prescriptions, with PIX payments and real-time updates.',
+      pt: 'Um app de saúde em Flutter pra encontrar medicamentos, agendar entregas e gerenciar receitas, com pagamento via PIX e atualizações em tempo real.',
     },
     about: {
       en: [
@@ -161,7 +161,7 @@ export const PROJECTS = [
     features: {
       en: [
         'Took the app from MVP to 50,000+ active users',
-        'Clean Architecture and design patterns for maintainable code',
+        'Clean Architecture and design patterns',
         'Payments, including PIX',
         'Barcode scanner and prescription QR code reader',
         'Real-time updates and notifications with Supabase',
@@ -170,7 +170,7 @@ export const PROJECTS = [
       ],
       pt: [
         'Levei o app do MVP a mais de 50 mil usuários ativos',
-        'Clean Architecture e design patterns pra um código sustentável',
+        'Clean Architecture e design patterns',
         'Pagamentos, incluindo PIX',
         'Leitor de código de barras e de QR code de receitas',
         'Atualizações e notificações em tempo real com Supabase',

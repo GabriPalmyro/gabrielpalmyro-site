@@ -10,10 +10,10 @@ export function notFound({ cfg, assets }) {
 ${bodyOpen({ lang: 'en', page: '404', paths })}
 ${nav({ lang: 'en', paths })}
 <main id="main"><div class="wrap nf">
-<span class="over">404</span>
 <h1 class="h2">${en.h1}</h1>
 <p class="lead">${en.body}</p>
 <p class="lead" lang="pt-BR">${pt.h1} ${pt.body}</p>
+<p class="meta num">HTTP 404</p>
 <p class="nf-act"><a class="btn primary" href="/">${en.home}</a><a class="btn secondary" href="/pt" lang="pt-BR" hreflang="pt-BR">${pt.home}</a></p>
 </div></main>
 ${footer({ cfg, lang: 'en', paths })}

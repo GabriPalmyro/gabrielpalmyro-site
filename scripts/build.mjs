@@ -11,6 +11,7 @@ import { homePage } from '../src/pages/home.mjs';
 import { projectPage } from '../src/pages/project.mjs';
 import { notFound } from '../src/pages/not-found.mjs';
 import { PROJECTS } from '../src/content/projects.mjs';
+import { APPS } from '../src/content/apps.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
@@ -27,14 +28,20 @@ rmSync(join(dist, 'assets/js'), { recursive: true, force: true });
 const minCss = (s) => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s*\n\s*/g, '\n').replace(/\n+/g, '\n').trim();
 const css = minCss(['tokens.css', 'site.css', 'fx.css'].map((f) => readFileSync(join(root, 'static/assets/css', f), 'utf8')).join('\n'));
 const js = readFileSync(join(root, 'static/assets/js/site.js'), 'utf8');
+// Parallax bundle: GSAP + ScrollTrigger (vendored, license headers kept) and
+// motion.js. site.js loads it on demand (wide screen, fine pointer, motion OK).
+const motion = ['vendor/gsap.min.js', 'vendor/ScrollTrigger.min.js', 'motion.js']
+  .map((f) => readFileSync(join(root, 'static/assets/js', f), 'utf8').trim()).join(';\n') + '\n';
 const assets = {
   css: `/assets/css/site.${hash(css)}.css`,
   js: `/assets/js/site.${hash(js)}.js`,
+  motion: `/assets/js/motion.${hash(motion)}.js`,
 };
 mkdirSync(join(dist, 'assets/css'), { recursive: true });
 mkdirSync(join(dist, 'assets/js'), { recursive: true });
 writeFileSync(join(dist, assets.css), css);
 writeFileSync(join(dist, assets.js), js);
+writeFileSync(join(dist, assets.motion), motion);
 
 // Pages
 const pages = [];
@@ -83,6 +90,31 @@ writeFileSync(join(dist, 'robots.txt'), `User-agent: *
 Allow: /
 
 Sitemap: ${cfg.siteUrl}/sitemap.xml
+`);
+
+// llms.txt: plain facts for AI assistants, generated from the same content.
+const en = (o) => (o && o.en) || '';
+writeFileSync(join(dist, 'llms.txt'), `# Gabriel Palmyro
+
+> Mobile Engineer (Flutter) in São Paulo, Brazil. Mobile Engineer at CarOnSale (Germany, remote). Also builds and publishes his own apps. His software company develops and publishes mobile apps.
+
+## Apps
+${APPS.map((a) => `- [${a.name}](${a.url}): ${en(a.desc)}${a.stats ? ` (${a.stats.map(en).join(', ')})` : ''}`).join('\n')}
+
+## Projects
+${PROJECTS.map((p) => `- [${p.name}](${cfg.siteUrl}/projects/${p.slug}): ${en(p.short)}`).join('\n')}
+
+## Company
+- Legal name: ${cfg.company.legalName}
+- CNPJ: ${cfg.company.cnpj}
+- Location: ${cfg.company.city}, ${cfg.company.country}
+- Contact: ${cfg.email}
+
+## Links
+- [Home (English)](${cfg.siteUrl}/)
+- [Home (Portuguese)](${cfg.siteUrl}/pt)
+- [GitHub](${cfg.github})
+- [LinkedIn](${cfg.linkedin})
 `);
 
 if (!existsSync(join(dist, 'og/og-en.png'))) console.warn('  WARNING: OG images missing. Run: node scripts/render-images.mjs');

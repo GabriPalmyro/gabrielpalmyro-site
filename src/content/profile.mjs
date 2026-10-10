@@ -23,7 +23,7 @@ export const SKILLS = [
 
 export const RECOMMENDATIONS = [
   {
-    quote: "I relied on Gabriel for all technical decisions. He's an incredible colleague, always committed and highly skilled.",
+    quote: "I relied on Gabriel for all technical decisions. He’s an incredible colleague, always committed and highly skilled.",
     name: 'Felipe Bufelli',
     title: 'Software Engineer',
   },

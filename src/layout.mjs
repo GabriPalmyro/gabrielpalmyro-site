@@ -58,7 +58,7 @@ ${alt}
 <meta property="og:locale:alternate" content="${STRINGS[other(lang)].ogLocale}">
 <meta name="twitter:card" content="summary_large_image">
 ${extraHead}
-<script defer src="${assets.js}"></script>
+<script defer src="${assets.js}"${assets.motion ? ` data-motion="${assets.motion}"` : ''}></script>
 </head>`;
 }
 
@@ -89,7 +89,9 @@ export function nav({ lang, paths, onHome = false }) {
   const h = (hash) => (onHome ? hash : home(lang, hash));
   const links = ['apps', 'projects', 'experience', 'company']
     .map((k) => `<a href="${h('#' + k)}">${t.nav[k]}</a>`).join('');
-  return `<header class="nav"><div class="wrap">
+  // Floating pill: content-sized bar detached from the edges. The bar gets a
+  // shadow once the page scrolls (html.scrolled, set by site.js).
+  return `<header class="nav"><div class="nav-bar">
 ${wordmark(t.nav.home, home(lang))}
 <nav class="nav-links" aria-label="${t.nav.main}">${links}</nav>
 <div class="nav-r">${paths.en && paths.pt ? langSwitch({ lang, paths, label: t.nav.lang }) : ''}<a class="btn primary nav-cta" href="${h('#contact')}">${t.nav.contact}</a></div>
@@ -101,13 +103,19 @@ export function footer({ cfg, lang, paths, onHome = false }) {
   const h = (hash) => (onHome ? hash : home(lang, hash));
   const c = cfg.company;
   const year = new Date().getFullYear();
+  // Colophon footer: one row of links, then the legal line. No link columns.
+  const links = [
+    ...['apps', 'projects', 'experience', 'company'].map((k) => `<li><a href="${h('#' + k)}">${t.nav[k]}</a></li>`),
+    `<li><a href="${cfg.github}" rel="me noopener">GitHub</a></li>`,
+    `<li><a href="${cfg.linkedin}" rel="me noopener">LinkedIn</a></li>`,
+  ].join('');
   return `<footer class="foot"><div class="wrap">
-<div class="foot-grid">
-<div class="foot-brand"><span class="wm">${monogram()}<span class="wm-t">Gabriel Palmyro</span></span>${paths.en && paths.pt ? langSwitch({ lang, paths, long: true, label: t.nav.lang }) : ''}</div>
-<div><h2 class="foot-h">${t.foot.site}</h2><ul><li><a href="${h('#apps')}">${t.nav.apps}</a></li><li><a href="${h('#projects')}">${t.nav.projects}</a></li><li><a href="${h('#experience')}">${t.nav.experience}</a></li><li><a href="${h('#company')}">${t.nav.company}</a></li></ul></div>
-<div><h2 class="foot-h">${t.nav.contact}</h2><ul><li><a href="mailto:${cfg.email}">${cfg.email}</a></li><li><a href="${cfg.github}" rel="me noopener">GitHub</a></li><li><a href="${cfg.linkedin}" rel="me noopener">LinkedIn</a></li></ul></div>
+<div class="foot-top">
+<span class="wm">${monogram()}<span class="wm-t">Gabriel Palmyro</span></span>
+<nav aria-label="${t.nav.foot}"><ul class="foot-links">${links}</ul></nav>
+${paths.en && paths.pt ? langSwitch({ lang, paths, long: true, label: t.nav.lang }) : ''}
 </div>
-<div class="foot-bottom"><p>&copy; ${year} ${c.legalName}. ${t.foot.rights}</p><p>CNPJ ${c.cnpj} &middot; ${t.company.locVal} &middot; <a href="mailto:${cfg.email}">${cfg.email}</a></p></div>
+<div class="foot-legal"><p>&copy; ${year} <span translate="no">${c.legalName}</span>. ${t.foot.rights}</p><p>CNPJ <span class="num" translate="no">${c.cnpj}</span>, ${t.company.locVal}. <a href="mailto:${cfg.email}" translate="no">${cfg.email}</a></p></div>
 </div></footer>`;
 }
 
