@@ -323,7 +323,7 @@ FIM DO BLOCO TENJIN -->
 </ul>
 <p>If you break these rules, we may remove items obtained that way, and your licence ends.</p>` },
         { id: 'our-content', h: 'Our content', html: `
-<p>Par One, including its code, holes, graphics, sounds, name and logo, is owned by us or our licensors and protected by intellectual property laws. These terms give you no rights to it beyond the licence above. Some parts of the app use open source software, licensed under its own terms. If you send us ideas or feedback, we may use them freely, without any obligation to you.</p>` },
+<p>The Par One software, graphics, sounds, name and logo we created are ours and protected by intellectual property laws. These terms give you no rights to it beyond the licence above. Some parts of the app use open source software, licensed under its own terms. If you send us ideas or feedback, we may use them freely, without any obligation to you.</p>` },
         { id: 'privacy', h: 'Privacy', html: `
 <p>The <a href="${paths.privacy.en}">Privacy Policy</a> explains what data the app uses and the choices you have.</p>` },
         { id: 'availability', h: 'Changes to the app and availability', html: `
@@ -397,7 +397,7 @@ FIM DO BLOCO TENJIN -->
 </ul>
 <p>Se você descumprir essas regras, podemos remover os itens obtidos dessa forma, e sua licença termina.</p>` },
         { id: 'nosso-conteudo', h: 'Nosso conteúdo', html: `
-<p>O Par One, incluindo código, buracos, gráficos, sons, nome e logo, pertence a nós ou a nossos licenciantes e é protegido pelas leis de propriedade intelectual. Estes termos não dão a você nenhum direito sobre ele além da licença acima. Algumas partes do app usam software de código aberto, licenciado sob os próprios termos. Se você nos mandar ideias ou sugestões, podemos usá-las livremente, sem nenhuma obrigação com você.</p>` },
+<p>O software, os gráficos, os sons, o nome e o logo do Par One que criamos são nossos e protegidos pelas leis de propriedade intelectual. Estes termos não dão a você nenhum direito sobre ele além da licença acima. Algumas partes do app usam software de código aberto, licenciado sob os próprios termos. Se você nos mandar ideias ou sugestões, podemos usá-las livremente, sem nenhuma obrigação com você.</p>` },
         { id: 'privacidade', h: 'Privacidade', html: `
 <p>A <a href="${paths.privacy.pt}">Política de Privacidade</a> explica quais dados o app usa e quais escolhas você tem.</p>` },
         { id: 'disponibilidade', h: 'Mudanças no app e disponibilidade', html: `
