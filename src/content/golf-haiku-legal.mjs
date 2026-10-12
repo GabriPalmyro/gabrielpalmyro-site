@@ -28,7 +28,7 @@ export const golfHaikuLegal = (cfg) => {
   const { legalName, cnpj } = cfg.company;
   const mail = `<a href="mailto:${cfg.email}" translate="no">${cfg.email}</a>`;
   const company = `<span translate="no">${legalName}</span>`;
-  const appId = '<span class="mono" translate="no">com.gabrielpalmyro.parone</span>';
+  const appId = '<span class="mono" translate="no">com.myroapps.golfhaiku</span>';
   const paths = {
     privacy: { en: '/golf-haiku/privacy', pt: '/pt/golf-haiku/privacidade' },
     terms: { en: '/golf-haiku/terms', pt: '/pt/golf-haiku/termos' },
