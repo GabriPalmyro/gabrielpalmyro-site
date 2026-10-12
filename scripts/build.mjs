@@ -10,6 +10,8 @@ import cfg from '../site.config.mjs';
 import { homePage } from '../src/pages/home.mjs';
 import { projectPage } from '../src/pages/project.mjs';
 import { notFound } from '../src/pages/not-found.mjs';
+import { legalPage } from '../src/pages/legal.mjs';
+import { parOneLegal } from '../src/content/par-one-legal.mjs';
 import { PROJECTS } from '../src/content/projects.mjs';
 import { APPS } from '../src/content/apps.mjs';
 
@@ -42,6 +44,11 @@ mkdirSync(join(dist, 'assets/js'), { recursive: true });
 writeFileSync(join(dist, assets.css), css);
 writeFileSync(join(dist, assets.js), js);
 writeFileSync(join(dist, assets.motion), motion);
+// Legal pages only: a separate stylesheet, so the shared bundle above (and
+// every page that links it) is untouched by them.
+const legalCss = minCss(readFileSync(join(root, 'static/assets/css/legal.css'), 'utf8'));
+assets.legal = `/assets/css/legal.${hash(legalCss)}.css`;
+writeFileSync(join(dist, assets.legal), legalCss);
 
 // Pages
 const pages = [];
@@ -61,6 +68,11 @@ for (const lang of ['en', 'pt']) {
     const slug = `projects/${project.slug}`;
     write(lang === 'en' ? `/${slug}` : `/pt/${slug}`, projectPage({ ...ctx, lang, project }), { alternates: { en: `/${slug}`, pt: `/pt/${slug}` } });
   }
+}
+// Par One privacy policy and terms. Fixed URLs: the store listings and the
+// AdMob consent message link to them.
+for (const doc of Object.values(parOneLegal(cfg))) {
+  for (const lang of ['en', 'pt']) write(doc.paths[lang], legalPage({ ...ctx, lang, doc }), { alternates: doc.paths });
 }
 write('/404', notFound(ctx), { sitemap: false });
 

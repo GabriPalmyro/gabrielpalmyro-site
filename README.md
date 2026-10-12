@@ -8,6 +8,8 @@ Personal and company site for Gabriel Palmyro (EN + PT-BR). Plain HTML/CSS/vanil
 | --- | --- |
 | `/`, `/pt/` | Home: hero, apps, projects, experience, skills, recommendations, company, contact |
 | `/projects/{slug}`, `/pt/projects/{slug}` | Project pages (same URLs as the previous site) |
+| `/par-one/privacy`, `/pt/par-one/privacidade` | Par One privacy policy (fixed URL: store listings and the AdMob consent message link here) |
+| `/par-one/terms`, `/pt/par-one/termos` | Par One terms of use |
 | `/404` | Not found (bilingual) |
 
 Also: `sitemap.xml` (hreflang), `robots.txt`, OG images (`/og/og-en.png`, `/og/og-pt.png`), favicons ("GP" monogram), JSON-LD (Person + Organization with CNPJ).
@@ -26,6 +28,7 @@ No dependencies, Node 18+ (`review-shots.mjs` needs Node 22+ for the built-in We
 - `src/content/apps.mjs`: the app cards (one array, add an object to add an app). Metrics only with a source comment.
 - `src/content/projects.mjs`, `experience.mjs`, `profile.mjs` (skills, recommendations): content lists, EN + PT.
 - `src/i18n.mjs`: interface and section copy. `src/layout.mjs`: head, nav, footer. `src/pages/*.mjs`: templates.
+- `src/content/par-one-legal.mjs`: the Par One privacy policy and terms (EN + PT, effective date in `EFFECTIVE`), rendered by `src/pages/legal.mjs`. Their prose styles are in `static/assets/css/legal.css`, bundled separately and loaded only by those pages.
 - `site.config.mjs`: site URL, contact email, links and the company block (legal name, CNPJ, city; never the street address).
 - `static/`: copied as-is. CSS is bundled with a content hash in this order: `tokens.css` (design tokens adapted from Forgetless `fl.css`, cobalt accent) then `site.css` (layout) then `fx.css` (motion).
 - Motion: a short CSS hero entrance, one IntersectionObserver reveal for the app entries (`data-reveal`) and scroll-linked depth on desktop: GSAP + ScrollTrigger, vendored in `static/assets/js/vendor/` (license headers kept), bundled with `motion.js` into `/assets/js/motion.<hash>.js`. `site.js` loads that bundle only on wide screens with a fine pointer and no reduced-motion preference, so phones never download it. Ease-out only, no springs, transforms and opacity only. The page is complete without JS. Dark mode follows the OS in CSS.
