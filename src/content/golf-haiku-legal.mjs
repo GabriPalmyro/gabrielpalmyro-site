@@ -1,4 +1,4 @@
-// Par One legal pages: privacy policy and terms of use, EN + PT-BR.
+// Golf Haiku legal pages: privacy policy and terms of use, EN + PT-BR.
 // URLs are fixed: the store listings and the AdMob consent message link to them.
 // The legal name and CNPJ come from site.config.mjs and are stated once per
 // document; "we" is used after that. Section bodies are trusted HTML.
@@ -24,27 +24,27 @@ const LINKS = {
   tenjin: 'https://tenjin.com/privacy/',
 };
 
-export const parOneLegal = (cfg) => {
+export const golfHaikuLegal = (cfg) => {
   const { legalName, cnpj } = cfg.company;
   const mail = `<a href="mailto:${cfg.email}" translate="no">${cfg.email}</a>`;
   const company = `<span translate="no">${legalName}</span>`;
   const appId = '<span class="mono" translate="no">com.gabrielpalmyro.parone</span>';
   const paths = {
-    privacy: { en: '/par-one/privacy', pt: '/pt/par-one/privacidade' },
-    terms: { en: '/par-one/terms', pt: '/pt/par-one/termos' },
+    privacy: { en: '/golf-haiku/privacy', pt: '/pt/golf-haiku/privacidade' },
+    terms: { en: '/golf-haiku/terms', pt: '/pt/golf-haiku/termos' },
   };
 
   const privacy = {
     paths: paths.privacy,
     en: {
-      title: 'Par One Privacy Policy',
-      desc: 'How Par One, a minigolf game for Android and iOS, handles data: what stays on your device, what the ads, purchases, analytics and crash reporting partners receive, and your choices.',
+      title: 'Golf Haiku Privacy Policy',
+      desc: 'How Golf Haiku, a minigolf game for Android and iOS, handles data: what stays on your device, what the ads, purchases, analytics and crash reporting partners receive, and your choices.',
       h1: 'Privacy Policy',
-      lead: 'What data Par One, our minigolf game for Android and iOS, uses, why, who receives it and the choices you have.',
+      lead: 'What data Golf Haiku, our minigolf game for Android and iOS, uses, why, who receives it and the choices you have.',
       related: `Read also the <a href="${paths.terms.en}">Terms of Use</a>.`,
       sections: [
         { id: 'who-we-are', h: 'Who we are', html: `
-<p>Par One is a minigolf game for Android and iOS (app ID ${appId}). It is published by ${company}, a company registered in Brazil under CNPJ <span class="num">${cnpj}</span>, based in São Paulo. In this policy, “we”, “us” and “our” mean that company, which is the controller of the personal data described here.</p>
+<p>Golf Haiku is a minigolf game for Android and iOS (app ID ${appId}). It is published by ${company}, a company registered in Brazil under CNPJ <span class="num">${cnpj}</span>, based in São Paulo. In this policy, “we”, “us” and “our” mean that company, which is the controller of the personal data described here.</p>
 <p>For anything about privacy, email ${mail}.</p>` },
         { id: 'short-version', h: 'The short version', html: `
 <ul>
@@ -59,12 +59,12 @@ export const parOneLegal = (cfg) => {
 <p>The app saves on your device: your progress (holes and balls), your coin balance, settings such as sound, a record of purchases already delivered (so each purchase is granted only once), the install ID described below and your ad consent choices (saved by Google's consent tool). None of this is copied to a server of ours. Uninstalling the app or clearing its data deletes it.</p>
 <p>Some of these values, like the hole you are on or how many coins you have, are included in the analytics events described below.</p>` },
         { id: 'install-id', h: 'The install ID', html: `
-<p>The first time you open Par One, it creates a random identifier (a version 4 UUID) and saves it on your device. It does not come from your device's hardware, your phone number, your name or any account, and it is not shown in the app.</p>
+<p>The first time you open Golf Haiku, it creates a random identifier (a version 4 UUID) and saves it on your device. It does not come from your device's hardware, your phone number, your name or any account, and it is not shown in the app.</p>
 <p>We use it as the ID for analytics, purchases and crash reports, so that events from the same install can be grouped and each purchase can be matched to the install that made it. If you uninstall and reinstall the app, a new ID is created and the old one is no longer used.</p>` },
         { id: 'who-receives-data', h: 'Who receives data', html: `
 <p>The app sends data directly to the service providers below. Each one receives only what it needs for its job.</p>
 <h3 class="h4">Google AdMob (ads) and Google's consent tool</h3>
-<p>Par One is free and shows ads: optional rewarded ads, which you choose to watch for a reward such as extra balls or coins, and full-screen ads at natural breaks, between holes or at the end of a game. They are served by Google AdMob, which receives:</p>
+<p>Golf Haiku is free and shows ads: optional rewarded ads, which you choose to watch for a reward such as extra balls or coins, and full-screen ads at natural breaks, between holes or at the end of a game. They are served by Google AdMob, which receives:</p>
 <ul>
 <li>your device's advertising ID (the Android advertising ID or, on iPhone and iPad, Apple's IDFA only if you allow tracking);</li>
 <li>your IP address and the approximate location derived from it;</li>
@@ -85,9 +85,9 @@ export const parOneLegal = (cfg) => {
 <!-- TENJIN, PLANNED AND NOT INTEGRATED YET. Enable this block only when the Tenjin SDK ships in the app.
 Then also: add a line to "Why we use data" (measuring ad campaigns: consent where asked, such as Apple's
 tracking prompt, otherwise legitimate interest), mention Tenjin in "Your choices" if it adds its own
-opt-out, and change EFFECTIVE in src/content/par-one-legal.mjs. Ready-to-enable text:
+opt-out, and change EFFECTIVE in src/content/golf-haiku-legal.mjs. Ready-to-enable text:
 <h3 class="h4">Tenjin (attribution of ad campaigns)</h3>
-<p>When we advertise Par One, we use Tenjin to learn which campaigns lead to installs and purchases. Tenjin receives your device's advertising ID (on iPhone and iPad, only if you allow tracking), your IP address, device and app information, information about the ad you saw or tapped before installing, and in-app revenue events (purchases and ad revenue) linked to the install. Tenjin processes this data on our behalf, and we use it only in aggregate to measure our campaigns. See <a href="${LINKS.tenjin}" rel="noopener">Tenjin's privacy policy</a>.</p>
+<p>When we advertise Golf Haiku, we use Tenjin to learn which campaigns lead to installs and purchases. Tenjin receives your device's advertising ID (on iPhone and iPad, only if you allow tracking), your IP address, device and app information, information about the ad you saw or tapped before installing, and in-app revenue events (purchases and ad revenue) linked to the install. Tenjin processes this data on our behalf, and we use it only in aggregate to measure our campaigns. See <a href="${LINKS.tenjin}" rel="noopener">Tenjin's privacy policy</a>.</p>
 END OF TENJIN BLOCK -->
 <h3 class="h4">Google Play and the App Store</h3>
 <p>Google and Apple handle downloads, payments and updates under their own privacy policies. They give us sales reports and aggregated statistics and, if you agreed to share it with developers, diagnostic data such as crash reports.</p>
@@ -108,7 +108,7 @@ END OF TENJIN BLOCK -->
 <ul>
 <li><strong>Privacy settings in the app.</strong> Where Google's privacy messages apply to your region, the pause menu shows “Privacy settings”. It opens Google's form, where you can change or withdraw your consent or, in US states with privacy laws, opt out of the sale or sharing of your data for targeted ads.</li>
 <li><strong>Android.</strong> In your device settings (usually Settings &gt; Privacy &gt; Ads, or Settings &gt; Google &gt; Ads), you can delete or reset your advertising ID. Once it is deleted, apps no longer receive it.</li>
-<li><strong>iPhone and iPad.</strong> In Settings &gt; Privacy &amp; Security &gt; Tracking, you can turn tracking off for Par One or for all apps.</li>
+<li><strong>iPhone and iPad.</strong> In Settings &gt; Privacy &amp; Security &gt; Tracking, you can turn tracking off for Golf Haiku or for all apps.</li>
 <li><strong>Analytics and crash reports.</strong> There is no switch in the app to turn them off. You can object by email: we will delete the data linked to your install and leave it out of further analysis.</li>
 <li><strong>Uninstalling.</strong> Uninstalling the app deletes all the data it stored on your device, including the install ID, and stops all collection.</li>
 </ul>
@@ -146,9 +146,9 @@ END OF TENJIN BLOCK -->
 <li><strong>Your emails to us:</strong> as long as needed to handle your request and keep a record that we did.</li>
 </ul>` },
         { id: 'security', h: 'Security', html: `
-<p>The app sends data to these providers over encrypted connections (HTTPS). Access to their dashboards is limited to the people who work on Par One. No system is perfectly secure, so if an incident is likely to affect you, we will take the steps the law requires, including notifying the authorities and you when required.</p>` },
+<p>The app sends data to these providers over encrypted connections (HTTPS). Access to their dashboards is limited to the people who work on Golf Haiku. No system is perfectly secure, so if an incident is likely to affect you, we will take the steps the law requires, including notifying the authorities and you when required.</p>` },
         { id: 'children', h: 'Children', html: `
-<p>Par One is meant for a general audience and is not directed at children under 13. We do not knowingly collect personal data from children under 13, or under the minimum age set by the law where they live. If you believe a child has used the app and data about them was collected, email us and we will delete the data we can link to their install.</p>` },
+<p>Golf Haiku is meant for a general audience and is not directed at children under 13. We do not knowingly collect personal data from children under 13, or under the minimum age set by the law where they live. If you believe a child has used the app and data about them was collected, email us and we will delete the data we can link to their install.</p>` },
         { id: 'changes', h: 'Changes to this policy', html: `
 <p>When we change this policy, we publish the new version on this page with a new effective date. If a change is significant, such as a new partner receiving data, we will also tell you in the app or on the store listing before it applies, and ask for your consent again where the law requires it.</p>` },
         { id: 'contact', h: 'Contact', html: `
@@ -156,14 +156,14 @@ END OF TENJIN BLOCK -->
       ],
     },
     pt: {
-      title: 'Política de Privacidade do Par One',
-      desc: 'Como o Par One, jogo de minigolfe para Android e iOS, trata dados: o que fica no seu aparelho, o que os parceiros de anúncios, compras, analytics e relatórios de falhas recebem, e as suas escolhas.',
+      title: 'Política de Privacidade do Golf Haiku',
+      desc: 'Como o Golf Haiku, jogo de minigolfe para Android e iOS, trata dados: o que fica no seu aparelho, o que os parceiros de anúncios, compras, analytics e relatórios de falhas recebem, e as suas escolhas.',
       h1: 'Política de Privacidade',
-      lead: 'Quais dados o Par One, nosso jogo de minigolfe para Android e iOS, usa, para quê, quem os recebe e quais escolhas você tem.',
+      lead: 'Quais dados o Golf Haiku, nosso jogo de minigolfe para Android e iOS, usa, para quê, quem os recebe e quais escolhas você tem.',
       related: `Veja também os <a href="${paths.terms.pt}">Termos de Uso</a>.`,
       sections: [
         { id: 'quem-somos', h: 'Quem somos', html: `
-<p>O Par One é um jogo de minigolfe para Android e iOS (identificador do app ${appId}). Ele é publicado pela ${company}, empresa brasileira inscrita no CNPJ sob o nº <span class="num">${cnpj}</span>, com sede em São Paulo. Nesta política, “nós” e “nosso” se referem a essa empresa, que é a controladora dos dados pessoais descritos aqui.</p>
+<p>O Golf Haiku é um jogo de minigolfe para Android e iOS (identificador do app ${appId}). Ele é publicado pela ${company}, empresa brasileira inscrita no CNPJ sob o nº <span class="num">${cnpj}</span>, com sede em São Paulo. Nesta política, “nós” e “nosso” se referem a essa empresa, que é a controladora dos dados pessoais descritos aqui.</p>
 <p>Para qualquer assunto de privacidade, escreva para ${mail}.</p>` },
         { id: 'resumo', h: 'Em resumo', html: `
 <ul>
@@ -178,12 +178,12 @@ END OF TENJIN BLOCK -->
 <p>O app guarda no seu aparelho: seu progresso (buracos e bolas), seu saldo de moedas, configurações como o som, um registro das compras já entregues (para que cada compra seja creditada uma única vez), o ID de instalação descrito abaixo e suas escolhas de consentimento para anúncios (guardadas pela ferramenta de consentimento do Google). Nada disso é copiado para um servidor nosso. Desinstalar o app ou limpar os dados dele apaga tudo.</p>
 <p>Alguns desses valores, como o buraco em que você está ou quantas moedas tem, vão junto nos eventos de analytics descritos abaixo.</p>` },
         { id: 'id-de-instalacao', h: 'O ID de instalação', html: `
-<p>Na primeira vez que você abre o Par One, ele cria um identificador aleatório (um UUID versão 4) e o salva no seu aparelho. Ele não vem do hardware do aparelho, do seu número de telefone, do seu nome nem de nenhuma conta, e não aparece no app.</p>
+<p>Na primeira vez que você abre o Golf Haiku, ele cria um identificador aleatório (um UUID versão 4) e o salva no seu aparelho. Ele não vem do hardware do aparelho, do seu número de telefone, do seu nome nem de nenhuma conta, e não aparece no app.</p>
 <p>Usamos esse ID em analytics, compras e relatórios de falhas, para agrupar os eventos de uma mesma instalação e associar cada compra à instalação que a fez. Se você desinstalar e instalar o app de novo, um novo ID é criado e o antigo deixa de ser usado.</p>` },
         { id: 'quem-recebe-dados', h: 'Quem recebe dados', html: `
 <p>O app envia dados diretamente aos prestadores de serviço abaixo. Cada um recebe só o que precisa para fazer o seu trabalho.</p>
 <h3 class="h4">Google AdMob (anúncios) e a ferramenta de consentimento do Google</h3>
-<p>O Par One é gratuito e mostra anúncios: anúncios premiados opcionais, que você escolhe assistir em troca de uma recompensa, como bolas ou moedas extras, e anúncios em tela cheia em pausas naturais, entre buracos ou no fim de uma partida. Eles são servidos pelo Google AdMob, que recebe:</p>
+<p>O Golf Haiku é gratuito e mostra anúncios: anúncios premiados opcionais, que você escolhe assistir em troca de uma recompensa, como bolas ou moedas extras, e anúncios em tela cheia em pausas naturais, entre buracos ou no fim de uma partida. Eles são servidos pelo Google AdMob, que recebe:</p>
 <ul>
 <li>o identificador de publicidade do aparelho (o ID de publicidade do Android ou, no iPhone e no iPad, o IDFA da Apple, só se você permitir o rastreamento);</li>
 <li>seu endereço IP e a localização aproximada obtida a partir dele;</li>
@@ -204,9 +204,9 @@ END OF TENJIN BLOCK -->
 <!-- TENJIN, PLANEJADO E AINDA NÃO INTEGRADO. Ative este bloco só quando o SDK da Tenjin estiver no app.
 Depois: acrescente uma linha em "Para que usamos os dados" (medir campanhas: consentimento onde pedimos,
 como o pedido de rastreamento da Apple, senão legítimo interesse), cite a Tenjin em "Suas escolhas" se ela
-tiver opt-out próprio e mude EFFECTIVE em src/content/par-one-legal.mjs. Texto pronto:
+tiver opt-out próprio e mude EFFECTIVE em src/content/golf-haiku-legal.mjs. Texto pronto:
 <h3 class="h4">Tenjin (atribuição de campanhas de anúncios)</h3>
-<p>Quando anunciamos o Par One, usamos a Tenjin para saber quais campanhas geram instalações e compras. A Tenjin recebe o identificador de publicidade do aparelho (no iPhone e no iPad, só se você permitir o rastreamento), seu endereço IP, informações do aparelho e do app, informações sobre o anúncio que você viu ou tocou antes de instalar e eventos de receita no app (compras e receita de anúncios) ligados à instalação. A Tenjin trata esses dados em nosso nome, e nós os usamos só de forma agregada para medir nossas campanhas. Veja a <a href="${LINKS.tenjin}" rel="noopener">política de privacidade da Tenjin</a>.</p>
+<p>Quando anunciamos o Golf Haiku, usamos a Tenjin para saber quais campanhas geram instalações e compras. A Tenjin recebe o identificador de publicidade do aparelho (no iPhone e no iPad, só se você permitir o rastreamento), seu endereço IP, informações do aparelho e do app, informações sobre o anúncio que você viu ou tocou antes de instalar e eventos de receita no app (compras e receita de anúncios) ligados à instalação. A Tenjin trata esses dados em nosso nome, e nós os usamos só de forma agregada para medir nossas campanhas. Veja a <a href="${LINKS.tenjin}" rel="noopener">política de privacidade da Tenjin</a>.</p>
 FIM DO BLOCO TENJIN -->
 <h3 class="h4">Google Play e App Store</h3>
 <p>O Google e a Apple cuidam dos downloads, pagamentos e atualizações, de acordo com as próprias políticas de privacidade. Eles nos passam relatórios de vendas e estatísticas agregadas e, se você aceitou compartilhar com desenvolvedores, dados de diagnóstico como relatórios de falhas.</p>
@@ -227,7 +227,7 @@ FIM DO BLOCO TENJIN -->
 <ul>
 <li><strong>“Privacy settings” no app.</strong> Onde as mensagens de privacidade do Google valem para a sua região, o menu de pausa mostra o botão “Privacy settings” (configurações de privacidade). Ele abre o formulário do Google, onde você pode mudar ou retirar seu consentimento ou, nos estados americanos com leis de privacidade, recusar a venda ou o compartilhamento dos seus dados para anúncios direcionados.</li>
 <li><strong>Android.</strong> Nas configurações do aparelho (em geral Configurações &gt; Privacidade &gt; Anúncios, ou Configurações &gt; Google &gt; Anúncios), você pode excluir ou redefinir seu ID de publicidade. Depois de excluído, os apps deixam de recebê-lo.</li>
-<li><strong>iPhone e iPad.</strong> Em Ajustes &gt; Privacidade e Segurança &gt; Rastreamento, você pode desligar o rastreamento para o Par One ou para todos os apps.</li>
+<li><strong>iPhone e iPad.</strong> Em Ajustes &gt; Privacidade e Segurança &gt; Rastreamento, você pode desligar o rastreamento para o Golf Haiku ou para todos os apps.</li>
 <li><strong>Analytics e relatórios de falhas.</strong> Não há um botão no app para desligá-los. Você pode se opor por e-mail: apagamos os dados ligados à sua instalação e a deixamos de fora das análises seguintes.</li>
 <li><strong>Desinstalar.</strong> Desinstalar o app apaga todos os dados que ele guardou no aparelho, incluindo o ID de instalação, e encerra toda a coleta.</li>
 </ul>
@@ -265,9 +265,9 @@ FIM DO BLOCO TENJIN -->
 <li><strong>Seus e-mails para nós:</strong> pelo tempo necessário para atender o pedido e manter registro de que o atendemos.</li>
 </ul>` },
         { id: 'seguranca', h: 'Segurança', html: `
-<p>O app envia dados a esses prestadores por conexões criptografadas (HTTPS). O acesso aos painéis deles é restrito a quem trabalha no Par One. Nenhum sistema é totalmente seguro: se um incidente puder afetar você, tomaremos as medidas que a lei exige, incluindo avisar as autoridades e você quando for o caso.</p>` },
+<p>O app envia dados a esses prestadores por conexões criptografadas (HTTPS). O acesso aos painéis deles é restrito a quem trabalha no Golf Haiku. Nenhum sistema é totalmente seguro: se um incidente puder afetar você, tomaremos as medidas que a lei exige, incluindo avisar as autoridades e você quando for o caso.</p>` },
         { id: 'criancas', h: 'Crianças', html: `
-<p>O Par One é feito para o público em geral e não é direcionado a crianças menores de 13 anos. Não coletamos, sabendo, dados pessoais de menores de 13 anos, ou da idade mínima definida pela lei do lugar onde moram. Se você acredita que uma criança usou o app e que dados sobre ela foram coletados, escreva para nós e apagaremos os dados que conseguirmos ligar à instalação dela.</p>` },
+<p>O Golf Haiku é feito para o público em geral e não é direcionado a crianças menores de 13 anos. Não coletamos, sabendo, dados pessoais de menores de 13 anos, ou da idade mínima definida pela lei do lugar onde moram. Se você acredita que uma criança usou o app e que dados sobre ela foram coletados, escreva para nós e apagaremos os dados que conseguirmos ligar à instalação dela.</p>` },
         { id: 'mudancas', h: 'Mudanças nesta política', html: `
 <p>Quando mudarmos esta política, publicaremos a nova versão nesta página com uma nova data de vigência. Se a mudança for relevante, como um novo parceiro recebendo dados, também avisaremos no app ou na página da loja antes de ela valer, e pediremos seu consentimento de novo quando a lei exigir.</p>` },
         { id: 'contato', h: 'Contato', html: `
@@ -279,20 +279,20 @@ FIM DO BLOCO TENJIN -->
   const terms = {
     paths: paths.terms,
     en: {
-      title: 'Par One Terms of Use',
-      desc: 'Terms of use for Par One, a minigolf game for Android and iOS: your licence, coins and virtual items, purchases, ads, fair play and governing law.',
+      title: 'Golf Haiku Terms of Use',
+      desc: 'Terms of use for Golf Haiku, a minigolf game for Android and iOS: your licence, coins and virtual items, purchases, ads, fair play and governing law.',
       h1: 'Terms of Use',
-      lead: 'The agreement between you and us for using Par One, our minigolf game. Please read it together with the Privacy Policy.',
+      lead: 'The agreement between you and us for using Golf Haiku, our minigolf game. Please read it together with the Privacy Policy.',
       related: `Read also the <a href="${paths.privacy.en}">Privacy Policy</a>.`,
       sections: [
         { id: 'who-we-are', h: 'Who we are and your agreement', html: `
-<p>Par One is published by ${company}, a company registered in Brazil under CNPJ <span class="num">${cnpj}</span>, based in São Paulo (“we”, “us”, “our”). By downloading, installing or using Par One, you agree to these terms. If you do not agree, do not use the app.</p>
+<p>Golf Haiku is published by ${company}, a company registered in Brazil under CNPJ <span class="num">${cnpj}</span>, based in São Paulo (“we”, “us”, “our”). By downloading, installing or using Golf Haiku, you agree to these terms. If you do not agree, do not use the app.</p>
 <p>If you are under 18, or under the age of majority where you live, use the app and make purchases only with permission from a parent or guardian.</p>` },
         { id: 'licence', h: 'Your licence', html: `
-<p>We give you a personal, limited, non-exclusive, non-transferable and revocable licence to download and use Par One on devices you own or control, for your own non-commercial entertainment. The store you got the app from has its own rules, which also apply: the ${ext(LINKS.playTerms.en, 'Google Play Terms of Service')} or, on iOS, Apple's ${ext(LINKS.appleEula, 'Licensed Application End User License Agreement')}.</p>` },
+<p>We give you a personal, limited, non-exclusive, non-transferable and revocable licence to download and use Golf Haiku on devices you own or control, for your own non-commercial entertainment. The store you got the app from has its own rules, which also apply: the ${ext(LINKS.playTerms.en, 'Google Play Terms of Service')} or, on iOS, Apple's ${ext(LINKS.appleEula, 'Licensed Application End User License Agreement')}.</p>` },
         { id: 'virtual-items', h: 'Coins and other virtual items', html: `
 <ul>
-<li>Coins, balls and other items in the game are virtual. You get a licence to use them in Par One; you do not own them.</li>
+<li>Coins, balls and other items in the game are virtual. You get a licence to use them in Golf Haiku; you do not own them.</li>
 <li>They have no cash value. They cannot be exchanged for money or anything outside the game, or sold, traded or transferred to another person, device or app.</li>
 <li>They are stored only on your device. If you uninstall the app, clear its data, reset or change your device, they are lost and we cannot recover them, because we keep no copy.</li>
 <li>Purchases that are not used up, like “No ads”, can be brought back on the same store account with “Restore purchases” in the pause menu. Coins from coin packs are used up when they are delivered and cannot be restored, and we do not guarantee that the coins included in the starter pack will be restored.</li>
@@ -307,7 +307,7 @@ FIM DO BLOCO TENJIN -->
 </ul>` },
         { id: 'ads', h: 'Ads', html: `
 <ul>
-<li>Par One is free and funded by ads. Rewarded ads are optional: watching one to the end gives the reward shown in the app. If an ad does not load or is not watched to the end, there is no reward.</li>
+<li>Golf Haiku is free and funded by ads. Rewarded ads are optional: watching one to the end gives the reward shown in the app. If an ad does not load or is not watched to the end, there is no reward.</li>
 <li>Full-screen ads appear at natural breaks, never in the middle of a shot. “No ads” (and the starter pack) removes them; rewarded ads stay available if you want their rewards.</li>
 <li>Ads are provided by Google and its partners. We do not control every ad, and anything you do with an advertiser, such as a purchase, is between you and them. If you see an ad that seems inappropriate, tell us.</li>
 <li>The Privacy Policy explains how ads use data.</li>
@@ -323,13 +323,13 @@ FIM DO BLOCO TENJIN -->
 </ul>
 <p>If you break these rules, we may remove items obtained that way, and your licence ends.</p>` },
         { id: 'our-content', h: 'Our content', html: `
-<p>The Par One software, graphics, sounds, name and logo we created are ours and protected by intellectual property laws. These terms give you no rights to it beyond the licence above. Some parts of the app use open source software, licensed under its own terms. If you send us ideas or feedback, we may use them freely, without any obligation to you.</p>` },
+<p>The Golf Haiku software, graphics, sounds, name and logo we created are ours and protected by intellectual property laws. These terms give you no rights to it beyond the licence above. Some parts of the app use open source software, licensed under its own terms. If you send us ideas or feedback, we may use them freely, without any obligation to you.</p>` },
         { id: 'privacy', h: 'Privacy', html: `
 <p>The <a href="${paths.privacy.en}">Privacy Policy</a> explains what data the app uses and the choices you have.</p>` },
         { id: 'availability', h: 'Changes to the app and availability', html: `
-<p>We may update Par One, change or remove features, holes or items, or stop offering the app. Some updates may be needed to keep playing. Where it is reasonable, we will give notice before we stop offering the app. Unless the law says otherwise, stopping the app or removing features does not entitle you to compensation for virtual items.</p>` },
+<p>We may update Golf Haiku, change or remove features, holes or items, or stop offering the app. Some updates may be needed to keep playing. Where it is reasonable, we will give notice before we stop offering the app. Unless the law says otherwise, stopping the app or removing features does not entitle you to compensation for virtual items.</p>` },
         { id: 'no-warranties', h: 'No warranties', html: `
-<p>We work to make Par One fun and reliable, but it is provided “as is” and “as available”. To the extent the law allows, we do not promise that it will work without interruptions or errors, that it fits a particular purpose or that your progress will never be lost. This does not affect guarantees that consumer law gives you and that cannot be excluded.</p>` },
+<p>We work to make Golf Haiku fun and reliable, but it is provided “as is” and “as available”. To the extent the law allows, we do not promise that it will work without interruptions or errors, that it fits a particular purpose or that your progress will never be lost. This does not affect guarantees that consumer law gives you and that cannot be excluded.</p>` },
         { id: 'liability', h: 'Limitation of liability', html: `
 <p>To the extent the law allows, we are not liable for indirect or consequential losses, or for the loss of progress, coins or other virtual items. Our total liability to you for any claim related to the app is limited to the amount you paid for in-app purchases in the 12 months before the claim. Nothing in these terms limits liability that the law does not allow to be limited, such as for fraud, wilful misconduct or gross negligence, or the rights consumers have by law.</p>` },
         { id: 'ending', h: 'Ending these terms', html: `
@@ -353,20 +353,20 @@ FIM DO BLOCO TENJIN -->
       ],
     },
     pt: {
-      title: 'Termos de Uso do Par One',
-      desc: 'Termos de uso do Par One, jogo de minigolfe para Android e iOS: sua licença, moedas e itens virtuais, compras, anúncios, jogo limpo e lei aplicável.',
+      title: 'Termos de Uso do Golf Haiku',
+      desc: 'Termos de uso do Golf Haiku, jogo de minigolfe para Android e iOS: sua licença, moedas e itens virtuais, compras, anúncios, jogo limpo e lei aplicável.',
       h1: 'Termos de Uso',
-      lead: 'O acordo entre você e nós para o uso do Par One, nosso jogo de minigolfe. Leia junto com a Política de Privacidade.',
+      lead: 'O acordo entre você e nós para o uso do Golf Haiku, nosso jogo de minigolfe. Leia junto com a Política de Privacidade.',
       related: `Veja também a <a href="${paths.privacy.pt}">Política de Privacidade</a>.`,
       sections: [
         { id: 'quem-somos', h: 'Quem somos e aceitação', html: `
-<p>O Par One é publicado pela ${company}, empresa brasileira inscrita no CNPJ sob o nº <span class="num">${cnpj}</span>, com sede em São Paulo (“nós”). Ao baixar, instalar ou usar o Par One, você concorda com estes termos. Se não concordar, não use o app.</p>
+<p>O Golf Haiku é publicado pela ${company}, empresa brasileira inscrita no CNPJ sob o nº <span class="num">${cnpj}</span>, com sede em São Paulo (“nós”). Ao baixar, instalar ou usar o Golf Haiku, você concorda com estes termos. Se não concordar, não use o app.</p>
 <p>Se você tem menos de 18 anos, ou não atingiu a maioridade onde mora, use o app e faça compras só com a permissão de um dos pais ou responsável.</p>` },
         { id: 'licenca', h: 'Sua licença', html: `
-<p>Nós concedemos a você uma licença pessoal, limitada, não exclusiva, intransferível e revogável para baixar e usar o Par One em aparelhos que sejam seus ou que você controle, para o seu entretenimento e sem fins comerciais. A loja de onde você baixou o app tem regras próprias, que também valem: os ${ext(LINKS.playTerms.pt, 'Termos de Serviço do Google Play')} ou, no iOS, o ${ext(LINKS.appleEula, 'Contrato de Licença de Usuário Final de Aplicativo Licenciado')} da Apple.</p>` },
+<p>Nós concedemos a você uma licença pessoal, limitada, não exclusiva, intransferível e revogável para baixar e usar o Golf Haiku em aparelhos que sejam seus ou que você controle, para o seu entretenimento e sem fins comerciais. A loja de onde você baixou o app tem regras próprias, que também valem: os ${ext(LINKS.playTerms.pt, 'Termos de Serviço do Google Play')} ou, no iOS, o ${ext(LINKS.appleEula, 'Contrato de Licença de Usuário Final de Aplicativo Licenciado')} da Apple.</p>` },
         { id: 'itens-virtuais', h: 'Moedas e outros itens virtuais', html: `
 <ul>
-<li>Moedas, bolas e outros itens do jogo são virtuais. Você recebe uma licença para usá-los no Par One; eles não são sua propriedade.</li>
+<li>Moedas, bolas e outros itens do jogo são virtuais. Você recebe uma licença para usá-los no Golf Haiku; eles não são sua propriedade.</li>
 <li>Eles não têm valor em dinheiro. Não podem ser trocados por dinheiro ou por nada fora do jogo, nem vendidos, negociados ou transferidos para outra pessoa, aparelho ou app.</li>
 <li>Eles ficam guardados só no seu aparelho. Se você desinstalar o app, limpar os dados dele, resetar ou trocar de aparelho, eles se perdem e não conseguimos recuperá-los, porque não guardamos cópia.</li>
 <li>Compras que não se esgotam com o uso, como “No ads” (sem anúncios), podem ser recuperadas na mesma conta da loja com “Restore purchases” (restaurar compras), no menu de pausa. As moedas dos pacotes de moedas são consumidas quando entregues e não podem ser restauradas, e não garantimos a restauração das moedas incluídas no pacote inicial.</li>
@@ -381,7 +381,7 @@ FIM DO BLOCO TENJIN -->
 </ul>` },
         { id: 'anuncios', h: 'Anúncios', html: `
 <ul>
-<li>O Par One é gratuito e se mantém com anúncios. Os anúncios premiados são opcionais: assistir a um até o fim dá a recompensa mostrada no app. Se o anúncio não carregar ou não for assistido até o fim, não há recompensa.</li>
+<li>O Golf Haiku é gratuito e se mantém com anúncios. Os anúncios premiados são opcionais: assistir a um até o fim dá a recompensa mostrada no app. Se o anúncio não carregar ou não for assistido até o fim, não há recompensa.</li>
 <li>Os anúncios em tela cheia aparecem em pausas naturais, nunca no meio de uma tacada. “No ads” (e o pacote inicial) remove esses anúncios; os anúncios premiados continuam disponíveis se você quiser as recompensas.</li>
 <li>Os anúncios são fornecidos pelo Google e pelos parceiros dele. Não controlamos cada anúncio, e o que você fizer com um anunciante, como uma compra, é entre você e ele. Se vir um anúncio que pareça inadequado, nos avise.</li>
 <li>A Política de Privacidade explica como os anúncios usam dados.</li>
@@ -397,13 +397,13 @@ FIM DO BLOCO TENJIN -->
 </ul>
 <p>Se você descumprir essas regras, podemos remover os itens obtidos dessa forma, e sua licença termina.</p>` },
         { id: 'nosso-conteudo', h: 'Nosso conteúdo', html: `
-<p>O software, os gráficos, os sons, o nome e o logo do Par One que criamos são nossos e protegidos pelas leis de propriedade intelectual. Estes termos não dão a você nenhum direito sobre ele além da licença acima. Algumas partes do app usam software de código aberto, licenciado sob os próprios termos. Se você nos mandar ideias ou sugestões, podemos usá-las livremente, sem nenhuma obrigação com você.</p>` },
+<p>O software, os gráficos, os sons, o nome e o logo do Golf Haiku que criamos são nossos e protegidos pelas leis de propriedade intelectual. Estes termos não dão a você nenhum direito sobre ele além da licença acima. Algumas partes do app usam software de código aberto, licenciado sob os próprios termos. Se você nos mandar ideias ou sugestões, podemos usá-las livremente, sem nenhuma obrigação com você.</p>` },
         { id: 'privacidade', h: 'Privacidade', html: `
 <p>A <a href="${paths.privacy.pt}">Política de Privacidade</a> explica quais dados o app usa e quais escolhas você tem.</p>` },
         { id: 'disponibilidade', h: 'Mudanças no app e disponibilidade', html: `
-<p>Podemos atualizar o Par One, mudar ou remover funções, buracos ou itens, ou deixar de oferecer o app. Algumas atualizações podem ser necessárias para continuar jogando. Quando for razoável, avisaremos antes de deixar de oferecer o app. Salvo quando a lei disser o contrário, o encerramento do app ou a remoção de funções não dá direito a compensação por itens virtuais.</p>` },
+<p>Podemos atualizar o Golf Haiku, mudar ou remover funções, buracos ou itens, ou deixar de oferecer o app. Algumas atualizações podem ser necessárias para continuar jogando. Quando for razoável, avisaremos antes de deixar de oferecer o app. Salvo quando a lei disser o contrário, o encerramento do app ou a remoção de funções não dá direito a compensação por itens virtuais.</p>` },
         { id: 'sem-garantias', h: 'Sem garantias', html: `
-<p>Trabalhamos para que o Par One seja divertido e confiável, mas ele é oferecido “no estado em que se encontra” e “conforme disponível”. Na medida permitida pela lei, não garantimos que ele funcione sem interrupções ou erros, que sirva a um fim específico ou que seu progresso nunca se perca. Isso não afeta as garantias que a lei do consumidor dá a você e que não podem ser afastadas.</p>` },
+<p>Trabalhamos para que o Golf Haiku seja divertido e confiável, mas ele é oferecido “no estado em que se encontra” e “conforme disponível”. Na medida permitida pela lei, não garantimos que ele funcione sem interrupções ou erros, que sirva a um fim específico ou que seu progresso nunca se perca. Isso não afeta as garantias que a lei do consumidor dá a você e que não podem ser afastadas.</p>` },
         { id: 'responsabilidade', h: 'Limitação de responsabilidade', html: `
 <p>Na medida permitida pela lei, não respondemos por perdas indiretas ou consequentes, nem pela perda de progresso, moedas ou outros itens virtuais. Nossa responsabilidade total com você por qualquer reclamação ligada ao app fica limitada ao valor que você pagou em compras no app nos 12 meses anteriores à reclamação. Nada nestes termos limita a responsabilidade que a lei não permite limitar, como em caso de fraude, dolo ou culpa grave, nem os direitos que o consumidor tem por lei.</p>` },
         { id: 'encerramento', h: 'Encerramento', html: `

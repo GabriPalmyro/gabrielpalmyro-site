@@ -11,7 +11,7 @@ import { homePage } from '../src/pages/home.mjs';
 import { projectPage } from '../src/pages/project.mjs';
 import { notFound } from '../src/pages/not-found.mjs';
 import { legalPage } from '../src/pages/legal.mjs';
-import { parOneLegal } from '../src/content/par-one-legal.mjs';
+import { golfHaikuLegal } from '../src/content/golf-haiku-legal.mjs';
 import { PROJECTS } from '../src/content/projects.mjs';
 import { APPS } from '../src/content/apps.mjs';
 
@@ -69,9 +69,9 @@ for (const lang of ['en', 'pt']) {
     write(lang === 'en' ? `/${slug}` : `/pt/${slug}`, projectPage({ ...ctx, lang, project }), { alternates: { en: `/${slug}`, pt: `/pt/${slug}` } });
   }
 }
-// Par One privacy policy and terms. Fixed URLs: the store listings and the
+// Golf Haiku privacy policy and terms. Fixed URLs: the store listings and the
 // AdMob consent message link to them.
-for (const doc of Object.values(parOneLegal(cfg))) {
+for (const doc of Object.values(golfHaikuLegal(cfg))) {
   for (const lang of ['en', 'pt']) write(doc.paths[lang], legalPage({ ...ctx, lang, doc }), { alternates: doc.paths });
 }
 write('/404', notFound(ctx), { sitemap: false });

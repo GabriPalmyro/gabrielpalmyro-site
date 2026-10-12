@@ -1,9 +1,9 @@
-// Legal document page (Par One privacy policy and terms of use), EN + PT-BR.
+// Legal document page (Golf Haiku privacy policy and terms of use), EN + PT-BR.
 // Reuses the project page shell (.pj, .pj-head, type scale) with the usual nav
 // and footer. Prose styles live in legal.css, loaded only here, so the shared
 // CSS bundle and every other page stay byte-identical.
 import { head, bodyOpen, nav, footer, bodyClose, esc } from '../layout.mjs';
-import { EFFECTIVE } from '../content/par-one-legal.mjs';
+import { EFFECTIVE } from '../content/golf-haiku-legal.mjs';
 
 const effectiveLabel = { en: 'Effective', pt: 'Vigente a partir de' };
 
@@ -20,7 +20,7 @@ ${nav({ lang, paths })}
 <main id="main" class="pj legal">
 <div class="wrap">
 <header class="pj-head">
-<p class="meta">Par One &middot; ${effectiveLabel[lang]} <time datetime="${EFFECTIVE.iso}">${EFFECTIVE[lang]}</time></p>
+<p class="meta">Golf Haiku &middot; ${effectiveLabel[lang]} <time datetime="${EFFECTIVE.iso}">${EFFECTIVE[lang]}</time></p>
 <h1 class="display sm">${esc(d.h1)}</h1>
 <p class="lead">${esc(d.lead)}</p>
 <p class="legal-rel">${d.related}</p>

@@ -1,4 +1,4 @@
-/* Legal pages (Par One privacy policy and terms of use). Bundled on its own
+/* Legal pages (Golf Haiku privacy policy and terms of use). Bundled on its own
    with a content hash and loaded only by those pages, so the shared bundle
    (tokens, site, fx) and every other page stay unchanged. Builds on the
    project page shell (.pj, .pj-head) and the type scale in tokens.css. */
