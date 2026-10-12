@@ -13,7 +13,7 @@ const ext = (href, text) => `<a href="${href}" rel="noopener">${text}</a>`;
 const LINKS = {
   googlePartners: { en: 'https://policies.google.com/technologies/partner-sites', pt: 'https://policies.google.com/technologies/partner-sites?hl=pt-BR' },
   googlePrivacy: { en: 'https://policies.google.com/privacy', pt: 'https://policies.google.com/privacy?hl=pt-BR' },
-  superwall: 'https://superwall.com/legal/privacy-policy',
+  revenuecat: 'https://www.revenuecat.com/privacy/',
   posthog: 'https://posthog.com/privacy',
   firebase: { en: 'https://firebase.google.com/support/privacy', pt: 'https://firebase.google.com/support/privacy' },
   anpd: 'https://www.gov.br/anpd/pt-br',
@@ -75,8 +75,8 @@ export const golfHaikuLegal = (cfg) => {
 <p>Before any ad is requested, the app runs Google's User Messaging Platform. Depending on where you are, it shows a consent form (in the European Economic Area, the UK and Switzerland), lets you opt out of the “sale” or “sharing” of your data for targeted ads (in US states with privacy laws) and, on iPhone and iPad, shows a short explanation followed by Apple's App Tracking Transparency prompt.</p>
 <p>Whether ads are personalised depends on those choices and on your device's ad settings. Non-personalised ads still use some data, such as your IP address and device information, to deliver ads, limit how often you see them, measure them and prevent fraud.</p>
 <p>Google uses this data under its own policies. See ${ext(LINKS.googlePartners.en, 'how Google uses information from sites or apps that use its services')} and the ${ext(LINKS.googlePrivacy.en, 'Google Privacy Policy')}.</p>
-<h3 class="h4">Superwall (purchases)</h3>
-<p>Superwall runs the in-app purchases and the offers shown in the shop or at the end of a game. It receives the install ID, the products you view and buy (product, price, currency, transaction identifiers and dates), your interactions with offers, and device and app information. It may attach the install ID to the purchase in Google Play or the App Store, so a purchase can be matched to the install. Payment is processed by Google or Apple under their own terms: we never receive your card details, name or email address. See ${ext(LINKS.superwall, "Superwall's privacy policy")}.</p>
+<h3 class="h4">RevenueCat (purchases)</h3>
+<p>RevenueCat validates and keeps the record of in-app purchases so they can be delivered and restored. It receives the install ID, the products you buy (product, price, currency, transaction identifiers and dates), device and app information and your IP address. It may attach the install ID to the purchase in Google Play or the App Store, so a purchase can be matched to the install. Payment is processed by Google or Apple under their own terms: we never receive your card details, name or email address. See ${ext(LINKS.revenuecat, "RevenueCat's privacy policy")}.</p>
 <h3 class="h4">PostHog (product analytics)</h3>
 <p>We use PostHog to understand how the game is played, so we can tune difficulty, fix confusing parts and decide what to build next. The app sends events such as app opened, hole started, shot, hole sunk, miss, game over, continue, shop opened, ad watched, purchase and restore, with game values like the hole number, balls, shots and coins.</p>
 <p>With each event, PostHog receives the install ID, device and app information (such as model, operating system, language, time zone, screen size and app version) and your IP address, which it uses to estimate a coarse location such as country and city. Session recording is turned off. We look at this data in aggregate and do not try to find out who you are. See ${ext(LINKS.posthog, "PostHog's privacy policy")}.</p>
@@ -141,7 +141,7 @@ END OF TENJIN BLOCK -->
 <li><strong>On your device:</strong> until you uninstall the app or clear its data.</li>
 <li><strong>Analytics (PostHog):</strong> as long as needed to understand and improve the game, and no longer than the retention period set in our PostHog project.</li>
 <li><strong>Crash reports (Crashlytics):</strong> as long as needed to fix the problems they show, and no longer than Firebase's retention period for crash data.</li>
-<li><strong>Purchases (Superwall, Google Play, App Store):</strong> as long as needed to deliver, restore and support your purchases, and for as long as tax and accounting laws require.</li>
+<li><strong>Purchases (RevenueCat, Google Play, App Store):</strong> as long as needed to deliver, restore and support your purchases, and for as long as tax and accounting laws require.</li>
 <li><strong>Ads (Google):</strong> under Google's own retention policies.</li>
 <li><strong>Your emails to us:</strong> as long as needed to handle your request and keep a record that we did.</li>
 </ul>` },
@@ -152,7 +152,7 @@ END OF TENJIN BLOCK -->
         { id: 'changes', h: 'Changes to this policy', html: `
 <p>When we change this policy, we publish the new version on this page with a new effective date. If a change is significant, such as a new partner receiving data, we will also tell you in the app or on the store listing before it applies, and ask for your consent again where the law requires it.</p>` },
         { id: 'contact', h: 'Contact', html: `
-<p>Questions, requests or complaints: ${mail}. This is also our channel for data subjects under the LGPD. We are based in São Paulo, Brazil. To contact Google, Superwall or PostHog directly, use the links to their policies above.</p>` },
+<p>Questions, requests or complaints: ${mail}. This is also our channel for data subjects under the LGPD. We are based in São Paulo, Brazil. To contact Google, RevenueCat or PostHog directly, use the links to their policies above.</p>` },
       ],
     },
     pt: {
@@ -194,8 +194,8 @@ END OF TENJIN BLOCK -->
 <p>Antes de pedir qualquer anúncio, o app passa pela plataforma de mensagens ao usuário do Google (User Messaging Platform). Dependendo de onde você está, ela mostra um formulário de consentimento (no Espaço Econômico Europeu, no Reino Unido e na Suíça), permite recusar a “venda” ou o “compartilhamento” dos seus dados para anúncios direcionados (nos estados americanos com leis de privacidade) e, no iPhone e no iPad, mostra uma breve explicação seguida do pedido de Transparência de Rastreamento de Apps da Apple.</p>
 <p>Se os anúncios são personalizados ou não depende dessas escolhas e das configurações de anúncios do seu aparelho. Mesmo anúncios não personalizados usam alguns dados, como seu IP e informações do aparelho, para exibir os anúncios, limitar quantas vezes você os vê, medir resultados e evitar fraudes.</p>
 <p>O Google usa esses dados de acordo com as próprias políticas. Veja ${ext(LINKS.googlePartners.pt, 'como o Google usa informações de sites ou apps que utilizam os serviços dele')} e a ${ext(LINKS.googlePrivacy.pt, 'Política de Privacidade do Google')}.</p>
-<h3 class="h4">Superwall (compras)</h3>
-<p>A Superwall cuida das compras no app e das ofertas exibidas na loja ou no fim de uma partida. Ela recebe o ID de instalação, os produtos que você vê e compra (produto, preço, moeda, identificadores e datas das transações), suas interações com as ofertas e informações do aparelho e do app. Ela pode anexar o ID de instalação à compra no Google Play ou na App Store, para que a compra seja associada à instalação. O pagamento é processado pelo Google ou pela Apple, nos termos deles: nunca recebemos os dados do seu cartão, seu nome ou seu e-mail. Veja a ${ext(LINKS.superwall, 'política de privacidade da Superwall')}.</p>
+<h3 class="h4">RevenueCat (compras)</h3>
+<p>O RevenueCat valida e guarda o registro das compras no app, para que elas sejam entregues e restauradas. Ele recebe o ID de instalação, os produtos que você compra (produto, preço, moeda, identificadores e datas das transações), informações do aparelho e do app e o seu endereço IP. Ele pode anexar o ID de instalação à compra no Google Play ou na App Store, para que a compra seja associada à instalação. O pagamento é processado pelo Google ou pela Apple, nos termos deles: nunca recebemos os dados do seu cartão, seu nome ou seu e-mail. Veja a ${ext(LINKS.revenuecat, 'política de privacidade do RevenueCat')}.</p>
 <h3 class="h4">PostHog (analytics do produto)</h3>
 <p>Usamos o PostHog para entender como o jogo é jogado, ajustar a dificuldade, corrigir o que confunde e decidir o que fazer em seguida. O app envia eventos como app aberto, buraco iniciado, tacada, bola no buraco, erro, fim de jogo, continuar, loja aberta, anúncio assistido, compra e restauração, com valores do jogo como o número do buraco, bolas, tacadas e moedas.</p>
 <p>Junto com cada evento, o PostHog recebe o ID de instalação, informações do aparelho e do app (como modelo, sistema operacional, idioma, fuso horário, tamanho da tela e versão do app) e seu endereço IP, que ele usa para estimar uma localização aproximada, como país e cidade. A gravação de sessão está desligada. Olhamos esses dados de forma agregada e não tentamos descobrir quem você é. Veja a ${ext(LINKS.posthog, 'política de privacidade do PostHog')}.</p>
@@ -260,7 +260,7 @@ FIM DO BLOCO TENJIN -->
 <li><strong>No seu aparelho:</strong> até você desinstalar o app ou limpar os dados dele.</li>
 <li><strong>Analytics (PostHog):</strong> pelo tempo necessário para entender e melhorar o jogo, e nunca além do período de retenção configurado no nosso projeto do PostHog.</li>
 <li><strong>Relatórios de falhas (Crashlytics):</strong> pelo tempo necessário para corrigir os problemas que eles mostram, e nunca além do período de retenção do Firebase para dados de falhas.</li>
-<li><strong>Compras (Superwall, Google Play, App Store):</strong> pelo tempo necessário para entregar, restaurar e dar suporte às suas compras, e pelo prazo que as leis fiscais e contábeis exigirem.</li>
+<li><strong>Compras (RevenueCat, Google Play, App Store):</strong> pelo tempo necessário para entregar, restaurar e dar suporte às suas compras, e pelo prazo que as leis fiscais e contábeis exigirem.</li>
 <li><strong>Anúncios (Google):</strong> de acordo com as políticas de retenção do próprio Google.</li>
 <li><strong>Seus e-mails para nós:</strong> pelo tempo necessário para atender o pedido e manter registro de que o atendemos.</li>
 </ul>` },
@@ -271,7 +271,7 @@ FIM DO BLOCO TENJIN -->
         { id: 'mudancas', h: 'Mudanças nesta política', html: `
 <p>Quando mudarmos esta política, publicaremos a nova versão nesta página com uma nova data de vigência. Se a mudança for relevante, como um novo parceiro recebendo dados, também avisaremos no app ou na página da loja antes de ela valer, e pediremos seu consentimento de novo quando a lei exigir.</p>` },
         { id: 'contato', h: 'Contato', html: `
-<p>Dúvidas, pedidos ou reclamações: ${mail}. Este também é o nosso canal de atendimento aos titulares de dados previsto na LGPD. Ficamos em São Paulo, Brasil. Para falar diretamente com o Google, a Superwall ou o PostHog, use os links das políticas deles acima.</p>` },
+<p>Dúvidas, pedidos ou reclamações: ${mail}. Este também é o nosso canal de atendimento aos titulares de dados previsto na LGPD. Ficamos em São Paulo, Brasil. Para falar diretamente com o Google, o RevenueCat ou o PostHog, use os links das políticas deles acima.</p>` },
       ],
     },
   };
