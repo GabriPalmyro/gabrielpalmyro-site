@@ -6,7 +6,7 @@
 // PT-BR written for Brazilian readers, not translated word by word.
 // When anything below changes, update EFFECTIVE as well.
 
-export const EFFECTIVE = { iso: '2026-10-12', en: '12 October 2026', pt: '12 de outubro de 2026' };
+export const EFFECTIVE = { iso: '2026-10-16', en: '16 October 2026', pt: '16 de outubro de 2026' };
 
 const ext = (href, text) => `<a href="${href}" rel="noopener">${text}</a>`;
 
@@ -82,13 +82,8 @@ export const golfHaikuLegal = (cfg) => {
 <p>With each event, PostHog receives the install ID, device and app information (such as model, operating system, language, time zone, screen size and app version) and your IP address, which it uses to estimate a coarse location such as country and city. Session recording is turned off. We look at this data in aggregate and do not try to find out who you are. See ${ext(LINKS.posthog, "PostHog's privacy policy")}.</p>
 <h3 class="h4">Firebase Crashlytics (crash reports)</h3>
 <p>If the app crashes or hits a serious error, Firebase Crashlytics, a Google service, collects a crash report: where in the code it happened, device model, operating system and app version, the state of the app at the time (such as free memory and screen orientation), a Crashlytics installation ID and our install ID. We use these reports only to find and fix bugs. See ${ext(LINKS.firebase.en, 'Privacy and Security in Firebase')}.</p>
-<!-- TENJIN, PLANNED AND NOT INTEGRATED YET. Enable this block only when the Tenjin SDK ships in the app.
-Then also: add a line to "Why we use data" (measuring ad campaigns: consent where asked, such as Apple's
-tracking prompt, otherwise legitimate interest), mention Tenjin in "Your choices" if it adds its own
-opt-out, and change EFFECTIVE in src/content/golf-haiku-legal.mjs. Ready-to-enable text:
-<h3 class="h4">Tenjin (attribution of ad campaigns)</h3>
-<p>When we advertise Golf Haiku, we use Tenjin to learn which campaigns lead to installs and purchases. Tenjin receives your device's advertising ID (on iPhone and iPad, only if you allow tracking), your IP address, device and app information, information about the ad you saw or tapped before installing, and in-app revenue events (purchases and ad revenue) linked to the install. Tenjin processes this data on our behalf, and we use it only in aggregate to measure our campaigns. See <a href="${LINKS.tenjin}" rel="noopener">Tenjin's privacy policy</a>.</p>
-END OF TENJIN BLOCK -->
+<h3 class="h4">Google Analytics for Firebase and Tenjin (measuring our ad campaigns)</h3>
+<p>When we advertise Golf Haiku, we need to know which ads lead to installs and to players who keep playing. For that the app uses Google Analytics for Firebase, a Google service that reports to Google Ads, and Tenjin, which reports to the other ad networks we buy ads from. They receive your device's advertising ID (on iPhone and iPad, only if you allow tracking), your IP address, device and app information, information about the ad you saw or tapped before installing, when the app is opened and for how long, a few game events (finishing the tutorial, and the total of holes sunk reaching 10, 25, 50, 100 and 250), the revenue of the ads you see and, in Google Analytics, in-app purchases. Where a consent form is shown, they follow the choices you made in it. They process this data on our behalf, and we use it only in aggregate to measure our campaigns. See ${ext(LINKS.firebase.en, 'Privacy and Security in Firebase')} and ${ext(LINKS.tenjin, "Tenjin's privacy policy")}.</p>
 <h3 class="h4">Google Play and the App Store</h3>
 <p>Google and Apple handle downloads, payments and updates under their own privacy policies. They give us sales reports and aggregated statistics and, if you agreed to share it with developers, diagnostic data such as crash reports.</p>
 <h3 class="h4">Other cases</h3>
@@ -101,6 +96,7 @@ END OF TENJIN BLOCK -->
 <li><strong>Non-personalised ads, ad measurement and fraud prevention:</strong> our legitimate interest in funding a free game.</li>
 <li><strong>Crash reports:</strong> our legitimate interest in keeping the app working and secure.</li>
 <li><strong>Analytics:</strong> our legitimate interest in improving the game, using pseudonymous data looked at in aggregate.</li>
+<li><strong>Measuring our ad campaigns:</strong> your consent where a consent form or Apple's tracking prompt is shown; otherwise our legitimate interest in knowing which of our ads work, which you can oppose at any time in your device's ad settings.</li>
 <li><strong>Answering your messages and requests:</strong> our legitimate interest in helping you, and our legal obligations under data protection law.</li>
 </ul>
 <p>Where we rely on legitimate interest, we have weighed it against your interests, kept the data to what is needed and tied it to a random ID instead of your identity. You can object at any time (see “Your rights”).</p>` },
@@ -109,7 +105,7 @@ END OF TENJIN BLOCK -->
 <li><strong>Privacy settings in the app.</strong> Where Google's privacy messages apply to your region, the pause menu shows “Privacy settings”. It opens Google's form, where you can change or withdraw your consent or, in US states with privacy laws, opt out of the sale or sharing of your data for targeted ads.</li>
 <li><strong>Android.</strong> In your device settings (usually Settings &gt; Privacy &gt; Ads, or Settings &gt; Google &gt; Ads), you can delete or reset your advertising ID. Once it is deleted, apps no longer receive it.</li>
 <li><strong>iPhone and iPad.</strong> In Settings &gt; Privacy &amp; Security &gt; Tracking, you can turn tracking off for Golf Haiku or for all apps.</li>
-<li><strong>Analytics and crash reports.</strong> There is no switch in the app to turn them off. You can object by email: we will delete the data linked to your install and leave it out of further analysis.</li>
+<li><strong>Analytics, campaign measurement and crash reports.</strong> There is no switch in the app to turn them off. You can object by email: we will delete the data linked to your install and leave it out of further analysis.</li>
 <li><strong>Uninstalling.</strong> Uninstalling the app deletes all the data it stored on your device, including the install ID, and stops all collection.</li>
 </ul>
 <p>You do not have to give us any data to play, and refusing consent does not block the game: you may still see ads, but they will not be personalised.</p>` },
@@ -141,6 +137,7 @@ END OF TENJIN BLOCK -->
 <li><strong>On your device:</strong> until you uninstall the app or clear its data.</li>
 <li><strong>Analytics (PostHog):</strong> as long as needed to understand and improve the game, and no longer than the retention period set in our PostHog project.</li>
 <li><strong>Crash reports (Crashlytics):</strong> as long as needed to fix the problems they show, and no longer than Firebase's retention period for crash data.</li>
+<li><strong>Campaign measurement (Google Analytics, Tenjin):</strong> as long as needed to measure our campaigns, and no longer than the retention periods set in our Google Analytics property and Tenjin account.</li>
 <li><strong>Purchases (RevenueCat, Google Play, App Store):</strong> as long as needed to deliver, restore and support your purchases, and for as long as tax and accounting laws require.</li>
 <li><strong>Ads (Google):</strong> under Google's own retention policies.</li>
 <li><strong>Your emails to us:</strong> as long as needed to handle your request and keep a record that we did.</li>
@@ -152,7 +149,7 @@ END OF TENJIN BLOCK -->
         { id: 'changes', h: 'Changes to this policy', html: `
 <p>When we change this policy, we publish the new version on this page with a new effective date. If a change is significant, such as a new partner receiving data, we will also tell you in the app or on the store listing before it applies, and ask for your consent again where the law requires it.</p>` },
         { id: 'contact', h: 'Contact', html: `
-<p>Questions, requests or complaints: ${mail}. This is also our channel for data subjects under the LGPD. We are based in São Paulo, Brazil. To contact Google, RevenueCat or PostHog directly, use the links to their policies above.</p>` },
+<p>Questions, requests or complaints: ${mail}. This is also our channel for data subjects under the LGPD. We are based in São Paulo, Brazil. To contact Google, RevenueCat, PostHog or Tenjin directly, use the links to their policies above.</p>` },
       ],
     },
     pt: {
@@ -201,13 +198,8 @@ END OF TENJIN BLOCK -->
 <p>Junto com cada evento, o PostHog recebe o ID de instalação, informações do aparelho e do app (como modelo, sistema operacional, idioma, fuso horário, tamanho da tela e versão do app) e seu endereço IP, que ele usa para estimar uma localização aproximada, como país e cidade. A gravação de sessão está desligada. Olhamos esses dados de forma agregada e não tentamos descobrir quem você é. Veja a ${ext(LINKS.posthog, 'política de privacidade do PostHog')}.</p>
 <h3 class="h4">Firebase Crashlytics (relatórios de falhas)</h3>
 <p>Se o app fechar por causa de uma falha ou tiver um erro grave, o Firebase Crashlytics, um serviço do Google, coleta um relatório: em que ponto do código aconteceu, modelo do aparelho, versões do sistema e do app, o estado do app no momento (como memória livre e orientação da tela), um ID de instalação do Crashlytics e o nosso ID de instalação. Usamos esses relatórios só para encontrar e corrigir bugs. Veja ${ext(LINKS.firebase.pt, 'Privacidade e segurança no Firebase')}.</p>
-<!-- TENJIN, PLANEJADO E AINDA NÃO INTEGRADO. Ative este bloco só quando o SDK da Tenjin estiver no app.
-Depois: acrescente uma linha em "Para que usamos os dados" (medir campanhas: consentimento onde pedimos,
-como o pedido de rastreamento da Apple, senão legítimo interesse), cite a Tenjin em "Suas escolhas" se ela
-tiver opt-out próprio e mude EFFECTIVE em src/content/golf-haiku-legal.mjs. Texto pronto:
-<h3 class="h4">Tenjin (atribuição de campanhas de anúncios)</h3>
-<p>Quando anunciamos o Golf Haiku, usamos a Tenjin para saber quais campanhas geram instalações e compras. A Tenjin recebe o identificador de publicidade do aparelho (no iPhone e no iPad, só se você permitir o rastreamento), seu endereço IP, informações do aparelho e do app, informações sobre o anúncio que você viu ou tocou antes de instalar e eventos de receita no app (compras e receita de anúncios) ligados à instalação. A Tenjin trata esses dados em nosso nome, e nós os usamos só de forma agregada para medir nossas campanhas. Veja a <a href="${LINKS.tenjin}" rel="noopener">política de privacidade da Tenjin</a>.</p>
-FIM DO BLOCO TENJIN -->
+<h3 class="h4">Google Analytics para Firebase e Tenjin (medição das nossas campanhas de anúncios)</h3>
+<p>Quando anunciamos o Golf Haiku, precisamos saber quais anúncios trazem instalações e jogadores que continuam jogando. Para isso o app usa o Google Analytics para Firebase, um serviço do Google que informa o Google Ads, e a Tenjin, que informa as outras redes de anúncios em que compramos anúncios. Eles recebem o identificador de publicidade do aparelho (no iPhone e no iPad, só se você permitir o rastreamento), seu endereço IP, informações do aparelho e do app, informações sobre o anúncio que você viu ou tocou antes de instalar, quando o app é aberto e por quanto tempo, alguns eventos do jogo (terminar o tutorial e o total de buracos acertados chegar a 10, 25, 50, 100 e 250), a receita dos anúncios que você vê e, no Google Analytics, as compras no app. Onde aparece um formulário de consentimento, eles seguem as escolhas que você fez nele. Eles tratam esses dados em nosso nome, e nós os usamos só de forma agregada para medir nossas campanhas. Veja ${ext(LINKS.firebase.pt, 'Privacidade e segurança no Firebase')} e a ${ext(LINKS.tenjin, 'política de privacidade da Tenjin')}.</p>
 <h3 class="h4">Google Play e App Store</h3>
 <p>O Google e a Apple cuidam dos downloads, pagamentos e atualizações, de acordo com as próprias políticas de privacidade. Eles nos passam relatórios de vendas e estatísticas agregadas e, se você aceitou compartilhar com desenvolvedores, dados de diagnóstico como relatórios de falhas.</p>
 <h3 class="h4">Outros casos</h3>
@@ -220,6 +212,7 @@ FIM DO BLOCO TENJIN -->
 <li><strong>Anúncios não personalizados, medição de anúncios e prevenção de fraude:</strong> nosso legítimo interesse em financiar um jogo gratuito.</li>
 <li><strong>Relatórios de falhas:</strong> nosso legítimo interesse em manter o app funcionando e seguro.</li>
 <li><strong>Analytics:</strong> nosso legítimo interesse em melhorar o jogo, com dados pseudonimizados analisados de forma agregada.</li>
+<li><strong>Medição das nossas campanhas de anúncios:</strong> seu consentimento, onde aparece um formulário de consentimento ou o pedido de rastreamento da Apple; nos outros casos, nosso legítimo interesse em saber quais dos nossos anúncios funcionam, ao qual você pode se opor a qualquer momento nas configurações de anúncios do aparelho.</li>
 <li><strong>Responder suas mensagens e solicitações:</strong> nosso legítimo interesse em ajudar você e o cumprimento das nossas obrigações legais de proteção de dados.</li>
 </ul>
 <p>Quando usamos o legítimo interesse, nós o comparamos com os seus interesses, limitamos os dados ao necessário e os ligamos a um ID aleatório, não à sua identidade. Você pode se opor a qualquer momento (veja “Seus direitos”).</p>` },
@@ -228,7 +221,7 @@ FIM DO BLOCO TENJIN -->
 <li><strong>“Privacy settings” no app.</strong> Onde as mensagens de privacidade do Google valem para a sua região, o menu de pausa mostra o botão “Privacy settings” (configurações de privacidade). Ele abre o formulário do Google, onde você pode mudar ou retirar seu consentimento ou, nos estados americanos com leis de privacidade, recusar a venda ou o compartilhamento dos seus dados para anúncios direcionados.</li>
 <li><strong>Android.</strong> Nas configurações do aparelho (em geral Configurações &gt; Privacidade &gt; Anúncios, ou Configurações &gt; Google &gt; Anúncios), você pode excluir ou redefinir seu ID de publicidade. Depois de excluído, os apps deixam de recebê-lo.</li>
 <li><strong>iPhone e iPad.</strong> Em Ajustes &gt; Privacidade e Segurança &gt; Rastreamento, você pode desligar o rastreamento para o Golf Haiku ou para todos os apps.</li>
-<li><strong>Analytics e relatórios de falhas.</strong> Não há um botão no app para desligá-los. Você pode se opor por e-mail: apagamos os dados ligados à sua instalação e a deixamos de fora das análises seguintes.</li>
+<li><strong>Analytics, medição de campanhas e relatórios de falhas.</strong> Não há um botão no app para desligá-los. Você pode se opor por e-mail: apagamos os dados ligados à sua instalação e a deixamos de fora das análises seguintes.</li>
 <li><strong>Desinstalar.</strong> Desinstalar o app apaga todos os dados que ele guardou no aparelho, incluindo o ID de instalação, e encerra toda a coleta.</li>
 </ul>
 <p>Você não precisa nos dar nenhum dado para jogar, e recusar o consentimento não impede o jogo: você ainda pode ver anúncios, só que não personalizados.</p>` },
@@ -260,6 +253,7 @@ FIM DO BLOCO TENJIN -->
 <li><strong>No seu aparelho:</strong> até você desinstalar o app ou limpar os dados dele.</li>
 <li><strong>Analytics (PostHog):</strong> pelo tempo necessário para entender e melhorar o jogo, e nunca além do período de retenção configurado no nosso projeto do PostHog.</li>
 <li><strong>Relatórios de falhas (Crashlytics):</strong> pelo tempo necessário para corrigir os problemas que eles mostram, e nunca além do período de retenção do Firebase para dados de falhas.</li>
+<li><strong>Medição de campanhas (Google Analytics, Tenjin):</strong> pelo tempo necessário para medir nossas campanhas, e nunca além dos períodos de retenção configurados na nossa propriedade do Google Analytics e na nossa conta da Tenjin.</li>
 <li><strong>Compras (RevenueCat, Google Play, App Store):</strong> pelo tempo necessário para entregar, restaurar e dar suporte às suas compras, e pelo prazo que as leis fiscais e contábeis exigirem.</li>
 <li><strong>Anúncios (Google):</strong> de acordo com as políticas de retenção do próprio Google.</li>
 <li><strong>Seus e-mails para nós:</strong> pelo tempo necessário para atender o pedido e manter registro de que o atendemos.</li>
@@ -271,7 +265,7 @@ FIM DO BLOCO TENJIN -->
         { id: 'mudancas', h: 'Mudanças nesta política', html: `
 <p>Quando mudarmos esta política, publicaremos a nova versão nesta página com uma nova data de vigência. Se a mudança for relevante, como um novo parceiro recebendo dados, também avisaremos no app ou na página da loja antes de ela valer, e pediremos seu consentimento de novo quando a lei exigir.</p>` },
         { id: 'contato', h: 'Contato', html: `
-<p>Dúvidas, pedidos ou reclamações: ${mail}. Este também é o nosso canal de atendimento aos titulares de dados previsto na LGPD. Ficamos em São Paulo, Brasil. Para falar diretamente com o Google, o RevenueCat ou o PostHog, use os links das políticas deles acima.</p>` },
+<p>Dúvidas, pedidos ou reclamações: ${mail}. Este também é o nosso canal de atendimento aos titulares de dados previsto na LGPD. Ficamos em São Paulo, Brasil. Para falar diretamente com o Google, o RevenueCat, o PostHog ou a Tenjin, use os links das políticas deles acima.</p>` },
       ],
     },
   };
