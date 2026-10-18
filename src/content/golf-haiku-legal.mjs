@@ -6,7 +6,7 @@
 // PT-BR written for Brazilian readers, not translated word by word.
 // When anything below changes, update EFFECTIVE as well.
 
-export const EFFECTIVE = { iso: '2026-10-17', en: '17 October 2026', pt: '17 de outubro de 2026' };
+export const EFFECTIVE = { iso: '2026-10-18', en: '18 October 2026', pt: '18 de outubro de 2026' };
 
 const ext = (href, text) => `<a href="${href}" rel="noopener">${text}</a>`;
 
